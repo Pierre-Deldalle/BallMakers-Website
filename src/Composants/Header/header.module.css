@@ -1,4 +1,4 @@
-.header {
+.headerHome {
     position: fixed;
     top: 20px;
     left: 50px;
@@ -10,6 +10,25 @@
     padding: 5px 30px;
     background-color: rgba(134, 134, 134, 0.1);
     backdrop-filter: blur(15px);
+    color: #fff;
+    border-radius: 70px;
+    border: rgba(185, 185, 185, 0.2) solid 0.5px;
+    z-index: 100;
+    margin: 0;
+    width: auto;
+}
+
+.headerDefault {
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    align-items: center;
+    padding: 5px 30px;
+    background-color: rgb(0, 0, 0);
     color: #fff;
     border-radius: 70px;
     border: rgba(185, 185, 185, 0.2) solid 0.5px;

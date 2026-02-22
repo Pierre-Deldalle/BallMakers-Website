@@ -10,13 +10,15 @@ import Reseaux from "./Pages/reseaux";
 function App() {
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/creations" element={<Creations />} />
-        <Route path="/collaborations" element={<Collaborations />} />
-        <Route path="/reseaux" element={<Reseaux />} />
-      </Routes>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/creations" element={<Creations />} />
+          <Route path="/collaborations" element={<Collaborations />} />
+          <Route path="/reseaux" element={<Reseaux />} />
+        </Routes>
+      </div>
     </>
   );
 }
