@@ -34,6 +34,7 @@ lerna-debug.log*
 # Assets lourds (IMPORTANT)
 # =========================
 /Assets/
+/Assets/*
 src/Assets/FondHome.gif
 *.gif
 

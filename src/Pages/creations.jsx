@@ -1,9 +1,10 @@
 import React from "react";
+import CartePortfolio from "../Composants/CartePortfolio/CartePortfolio";
 
 const Creations = () => {
   return (
     <div>
-      <h1>Créations</h1>
+      <CartePortfolio />
     </div>
   );
 };
