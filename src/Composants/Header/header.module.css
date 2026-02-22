@@ -1,0 +1,48 @@
+.header {
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    align-items: center;
+    padding: 5px 30px;
+    background-color: rgba(134, 134, 134, 0.1);
+    backdrop-filter: blur(15px);
+    color: #fff;
+    border-radius: 70px;
+    border: rgba(185, 185, 185, 0.2) solid 0.5px;
+    z-index: 100;
+    margin: 0;
+    width: auto;
+}
+
+.logo {
+    height: 85px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.15);
+}
+
+.nav {
+    display: flex;
+    gap: 45px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #7b7b7b;
+}

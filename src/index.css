@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'PoliceRegular';
+  src: url('./Assets/Polices/SchibstedGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PoliceBold';
+  src: url('./Assets/Polices/SchibstedGrotesk-ExtraBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'PoliceRegular', sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+}
