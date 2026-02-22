@@ -1,7 +1,12 @@
 .CartePortfolio {
-    margin-top: 100px;
-    margin-left: 100px;
-    width: 400px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.CartePortfolio {
+    width: 360px;
     display: flex;
     flex-direction: column;
     gap: 8px;

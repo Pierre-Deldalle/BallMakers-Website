@@ -1,15 +1,15 @@
 import style from "./CartePortfolio.module.css";
-import Affiche from "../../Assets/Cartes/Affiche.png";
+import { Link } from "react-router-dom";
 
-const CartePortfolio = () => {
+const CartePortfolio = ({ link, image, titre, date }) => {
   return (
-    <div className={style.CartePortfolio}>
-      <img src={Affiche} alt="Affiche" className={style.imageContainer} />
+    <Link to={link} className={style.CartePortfolio}>
+      <img src={image} alt={titre} className={style.imageContainer} />
       <div className={style.textes}>
-        <p className={style.texteTitre}>Création de visuels</p>
-        <p className={style.texteDate}>2023-maintenant</p>
+        <p className={style.texteTitre}>{titre}</p>
+        <p className={style.texteDate}>{date}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
