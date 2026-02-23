@@ -12,39 +12,44 @@ import Highlights from "../Assets/Cartes/Highlights.png";
 const Creations = () => {
   return (
     <div className={style.container}>
-      <h1 className={style.titre}>Mon Portfolio</h1>
+      <h1 className={style.titre}>➤ Mon Portfolio</h1>
 
       <div className={style.grid}>
         <CartePortfolio
           link="/"
           image={Affiche}
           titre="Visuels/Affiches"
-          date="2023-"
+          date="2023 - maintenant"
         />
         <CartePortfolio
           link="/"
           image={Instagram}
-          titre="ReelsInstagram"
-          date="2023-"
+          titre="Reels Instagram"
+          date="2023 - maintenant"
         />
         <CartePortfolio
           link="/"
           image={Highlights}
           titre="Highlights Joueurs"
-          date="2024"
+          date="2024 - maintenant"
         />
         <CartePortfolio
           link="/"
           image={Shooting}
           titre="Photos Shooting"
-          date="2024"
+          date="2025 - maintenant"
         />
-        <CartePortfolio link="/" image={Trailer} titre="Trailers" date="2024" />
+        <CartePortfolio
+          link="/"
+          image={Trailer}
+          titre="Trailers"
+          date="2025 - maintenant"
+        />
         <CartePortfolio
           link="/"
           image={Youtube}
           titre="Vidéos Youtube"
-          date="2024"
+          date="2023 - maintenant"
         />
       </div>
     </div>
