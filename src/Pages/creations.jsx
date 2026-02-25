@@ -8,6 +8,7 @@ import Shooting from "../Assets/Cartes/Shooting.png";
 import Trailer from "../Assets/Cartes/Trailer.png";
 import Youtube from "../Assets/Cartes/Youtube.png";
 import Highlights from "../Assets/Cartes/Highlights.png";
+import Footer from "../Composants/Footer/footer";
 
 const Creations = () => {
   return (
@@ -52,6 +53,7 @@ const Creations = () => {
           date="2023 - maintenant"
         />
       </div>
+      <Footer />
     </div>
   );
 };

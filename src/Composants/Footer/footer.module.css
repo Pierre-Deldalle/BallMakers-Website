@@ -1,0 +1,91 @@
+.footer {
+    border-radius: 70px;
+    border: rgba(185, 185, 185, 0.2) solid 0.5px;
+    color: #ffffff;
+    padding: 25px 5px 10px 5px;
+    margin-top: 30px;
+    background-color: rgba(134, 134, 134, 0.1);
+    backdrop-filter: blur(15px);
+}
+
+.container {
+    width: 100%;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.logo {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.section h4 {
+    margin-bottom: 6px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #cccccc;
+}
+
+.section p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #aaaaaa;
+    margin-right: 200px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    margin-bottom: 5px;
+}
+
+.list li a {
+    text-decoration: none;
+    color: #aaaaaa;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.list li a:hover {
+    color: #ffffff;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #aaaaaa;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.socials a:hover {
+    color: #ffffff;
+}
+
+.bottom {
+    margin-top: 5px;
+    padding-top: 10px;
+    border-top: 1px solid #222;
+    text-align: center;
+    font-size: 13px;
+    color: #777777;
+}
