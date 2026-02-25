@@ -6,7 +6,7 @@ const Header = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
   return (
-    <header className={isHome ? style.headerHome : style.headerDefault}>
+    <header className={style.headerHome}>
       <Link to="/">
         <img src={logoTexte} alt="LogoBallMakers" className={style.logo} />
       </Link>

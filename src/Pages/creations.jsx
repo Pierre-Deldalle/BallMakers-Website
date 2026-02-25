@@ -12,7 +12,7 @@ import Highlights from "../Assets/Cartes/Highlights.png";
 const Creations = () => {
   return (
     <div className={style.container}>
-      <h1 className={style.titre}>➤ Mon Portfolio</h1>
+      <h1 className={style.titre}>· Mon Portfolio</h1>
 
       <div className={style.grid}>
         <CartePortfolio
