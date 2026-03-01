@@ -12,7 +12,7 @@ const Footer = () => {
             Passionné de basket et de photographie depuis tout petit, j'ai créé
             BallMakers afin de partager mes créations dans le monde du basket.
             Je fais notamment des photos, des vidéos et des visuels pour mes
-            différents réseaux.
+            différents projets.
           </p>
         </div>
 
@@ -21,6 +21,9 @@ const Footer = () => {
           <ul className={style.list}>
             <li>
               <Link to="/">Accueil</Link>
+            </li>
+            <li>
+              <Link to="/creations">Créations</Link>
             </li>
             <li>
               <Link to="/collaborations">Collaborations</Link>
