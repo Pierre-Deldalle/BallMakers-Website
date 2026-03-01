@@ -18,37 +18,37 @@ const Creations = () => {
 
         <div className={style.grid}>
           <CartePortfolio
-            link="/"
+            link="/visuelsaffiches"
             image={Affiche}
             titre="Visuels/Affiches"
             date="2023 - maintenant"
           />
           <CartePortfolio
-            link="/"
+            link="/reelsinstagram"
             image={Instagram}
             titre="Reels Instagram"
             date="2023 - maintenant"
           />
           <CartePortfolio
-            link="/"
+            link="/highlightsjoueurs"
             image={Highlights}
             titre="Highlights Joueurs"
             date="2024 - maintenant"
           />
           <CartePortfolio
-            link="/"
+            link="/photosshooting"
             image={Shooting}
             titre="Photos Shooting"
             date="2025 - maintenant"
           />
           <CartePortfolio
-            link="/"
+            link="/trailers"
             image={Trailer}
             titre="Trailers"
             date="2025 - maintenant"
           />
           <CartePortfolio
-            link="/"
+            link="/vidéosyoutube"
             image={Youtube}
             titre="Vidéos Youtube"
             date="2023 - maintenant"
