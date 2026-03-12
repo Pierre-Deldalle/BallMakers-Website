@@ -22,6 +22,7 @@ const GalerieVisuels = ({ visuels = [] }) => {
             date={visuel.date}
             image={visuel.image}
             onAgrandir={() => ouvrirLightbox(index)}
+            fictive={visuel.fictive}
           />
         ))}
       </div>

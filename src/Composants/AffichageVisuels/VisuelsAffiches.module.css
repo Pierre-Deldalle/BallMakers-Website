@@ -1,7 +1,8 @@
 .afficheGlobale {
   display: inline-block;
+  position: relative;
   border-radius: 6px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
@@ -15,6 +16,8 @@
 .imageWrapper {
   position: relative;
   display: block;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .imageAffiche {
@@ -29,21 +32,17 @@
   top: 10px;
   right: 10px;
   z-index: 2;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 34px;
   height: 34px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
-
   background: rgba(0, 0, 0, 0.45);
   color: #ffffff;
   backdrop-filter: blur(4px);
-
   opacity: 0;
   transform: scale(0.85);
   transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
@@ -96,4 +95,52 @@
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.iconeFictive {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.45);
+  color: red;
+  backdrop-filter: blur(4px);
+  opacity: 0.9;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.iconeFictive::after {
+  content: "Ce visuel est fictif.";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 10;
+}
+
+.iconeFictive:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.iconeFictive:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
 }
