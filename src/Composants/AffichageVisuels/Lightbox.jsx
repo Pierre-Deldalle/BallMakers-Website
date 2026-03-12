@@ -15,7 +15,6 @@ const Lightbox = ({
 
   const handleKeyDown = useCallback(
     (e) => {
-      if (e.key === "Escape") onFermer();
       if (e.key === "ArrowLeft" && hasPrecedent) onPrecedent();
       if (e.key === "ArrowRight" && hasSuivant) onSuivant();
     },

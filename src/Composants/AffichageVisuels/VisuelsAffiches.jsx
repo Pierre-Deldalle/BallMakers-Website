@@ -1,11 +1,41 @@
 import React from "react";
 import style from "./VisuelsAffiches.module.css";
 
-const VisuelsAffiches = ({ titre, date, image, onAgrandir }) => {
+const VisuelsAffiches = ({
+  titre,
+  date,
+  image,
+  onAgrandir,
+  fictive,
+  priorite,
+}) => {
   return (
     <div className={style.afficheGlobale}>
+      {fictive && (
+        <button className={style.iconeFictive} aria-label="Image fictive">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="red"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9" />
+          </svg>
+        </button>
+      )}
+
       <div className={style.imageWrapper}>
-        <img src={image} alt={titre} className={style.imageAffiche} />
+        <img
+          src={image}
+          alt={titre}
+          className={style.imageAffiche}
+          priorite={priorite ? "eager" : "lazy"}
+        />
 
         <button
           className={style.boutonAgrandir}
