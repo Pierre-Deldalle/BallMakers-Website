@@ -11,7 +11,7 @@ import Affiche6 from "../../Assets/Affiches/Affiche6.png";
 const visuelsaffiches = () => {
   return (
     <div>
-      <h1 className={style.titre}>Affiches/Visuels</h1>
+      <h1 className={style.titre}>· Affiches/Visuels</h1>
       <GalerieVisuels
         visuels={[
           {
