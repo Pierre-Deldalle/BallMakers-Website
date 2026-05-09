@@ -14,6 +14,8 @@ const Creations = () => {
   return (
     <>
       <div className={style.container}>
+        <div className={`${style["bg-circle"]} ${style["circle-1"]}`} />
+        <div className={`${style["bg-circle"]} ${style["circle-2"]}`} />
         <h1 className={style.titre}>· Mon Portfolio</h1>
 
         <div className={style.grid}>
