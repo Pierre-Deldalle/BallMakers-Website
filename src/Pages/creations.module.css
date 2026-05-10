@@ -2,9 +2,9 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    min-height: 100vh;
-    padding: 120px 100px 80px 100px;
+    padding: 120px 100px 60px 100px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .titre {
@@ -13,6 +13,8 @@
     margin-bottom: 25px;
     margin-left: 20px;
     text-align: left;
+    position: relative;
+    z-index: 2;
 }
 
 .grid {
@@ -20,6 +22,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     justify-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .bg-circle {
@@ -28,8 +32,9 @@
     background: rgba(255, 255, 255, 0.9);
     filter: blur(140px);
     opacity: 0.12;
-    z-index: 0;
     pointer-events: none;
+    z-index: 0;
+
     animation: float 14s ease-in-out infinite;
 }
 
@@ -59,8 +64,4 @@
     100% {
         transform: translate(0, 0);
     }
-}
-
-.bg-circle {
-    animation: float 14s ease-in-out infinite;
 }

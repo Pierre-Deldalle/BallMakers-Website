@@ -1,15 +1,25 @@
 .CartePortfolio {
-    width: 360px;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 360px;
+
     display: flex;
     flex-direction: column;
     gap: 8px;
+
     border: rgba(185, 185, 185, 0.2) solid 0.5px;
     border-radius: 12px;
     padding: 5px;
+
     background-color: rgba(134, 134, 134, 0.1);
     backdrop-filter: blur(15px);
 
     transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.CartePortfolio:hover {
+    transform: translateY(-5px);
 }
 
 .imageWrapper {
@@ -32,6 +42,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 4px 2px 2px 2px;
 }
 
 .texteTitre {
@@ -44,9 +55,4 @@
     font-size: 12px;
     color: #888;
     margin: 0;
-}
-
-.CartePortfolio:hover {
-    transform: translateY(-5px);
-
 }

@@ -1,18 +1,18 @@
 import GalerieVisuels from "../../Composants/AffichageVisuels/GalerieVisuels";
 import Footer from "../../Composants/Footer/footer";
 import style from "./visuelsaffiches.module.css";
-import Shooting1 from "../../Assets/Shooting/Shooting1.jpg";
-import Shooting2 from "../../Assets/Shooting/Shooting2.jpg";
-import Shooting3 from "../../Assets/Shooting/Shooting3.jpg";
-import Shooting4 from "../../Assets/Shooting/Shooting4.jpg";
-import Shooting5 from "../../Assets/Shooting/Shooting5.jpg";
-import Shooting6 from "../../Assets/Shooting/Shooting6.jpg";
-import Shooting7 from "../../Assets/Shooting/Shooting7.jpg";
-import Shooting8 from "../../Assets/Shooting/Shooting8.jpg";
-import Shooting9 from "../../Assets/Shooting/Shooting9.jpg";
-import Shooting10 from "../../Assets/Shooting/Shooting10.jpg";
-import Shooting11 from "../../Assets/Shooting/Shooting11.jpg";
-import Shooting12 from "../../Assets/Shooting/Shooting12.jpg";
+import Shooting1 from "../../Assets/Shooting/Shooting1.webp";
+import Shooting2 from "../../Assets/Shooting/Shooting2.webp";
+import Shooting3 from "../../Assets/Shooting/Shooting3.webp";
+import Shooting4 from "../../Assets/Shooting/Shooting4.webp";
+import Shooting5 from "../../Assets/Shooting/Shooting5.webp";
+import Shooting6 from "../../Assets/Shooting/Shooting6.webp";
+import Shooting7 from "../../Assets/Shooting/Shooting7.webp";
+import Shooting8 from "../../Assets/Shooting/Shooting8.webp";
+import Shooting9 from "../../Assets/Shooting/Shooting9.webp";
+import Shooting10 from "../../Assets/Shooting/Shooting10.webp";
+import Shooting11 from "../../Assets/Shooting/Shooting11.webp";
+import Shooting12 from "../../Assets/Shooting/Shooting12.webp";
 
 const photosshooting = () => {
   return (
