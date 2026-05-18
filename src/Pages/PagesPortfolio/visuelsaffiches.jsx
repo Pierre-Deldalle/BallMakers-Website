@@ -7,11 +7,13 @@ import Affiche3 from "../../Assets/Affiches/Affiche3.webp";
 import Affiche4 from "../../Assets/Affiches/Affiche4.webp";
 import Affiche5 from "../../Assets/Affiches/Affiche5.webp";
 import Affiche6 from "../../Assets/Affiches/Affiche6.webp";
+import Affiche7 from "../../Assets/Affiches/Affiche7.webp";
+import Affiche8 from "../../Assets/Affiches/Affiche8.webp";
 
 const visuelsaffiches = () => {
   return (
     <div>
-      <h1 className={style.titre}>Affiches/Visuels</h1>
+      <h1 className={style.titre}>· Affiches/Visuels</h1>
       <GalerieVisuels
         visuels={[
           {

@@ -2,5 +2,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
   gap: 15px;
-  padding: 60px;
+  padding-right: 60px;
+  padding-left: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-items: center;
 }

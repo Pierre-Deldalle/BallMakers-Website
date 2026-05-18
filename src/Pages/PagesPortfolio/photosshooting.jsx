@@ -17,7 +17,7 @@ import Shooting12 from "../../Assets/Shooting/Shooting12.webp";
 const photosshooting = () => {
   return (
     <div>
-      <h1 className={style.titre}>Affiches/Visuels</h1>
+      <h1 className={style.titre}>· Affiches/Visuels</h1>
       <GalerieVisuels
         visuels={[
           {

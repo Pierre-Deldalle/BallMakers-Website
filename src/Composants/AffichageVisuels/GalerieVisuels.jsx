@@ -3,7 +3,7 @@ import VisuelsAffiches from "./VisuelsAffiches";
 import Lightbox from "./Lightbox";
 import style from "./GalerieVisuels.module.css";
 
-const GalerieVisuels = ({ visuels = [] }) => {
+const GalerieVisuels = ({ visuels = [], mode = "grid" }) => {
   const [indexActif, setIndexActif] = useState(null);
 
   const ouvrirLightbox = (index) => setIndexActif(index);

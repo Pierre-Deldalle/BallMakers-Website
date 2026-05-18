@@ -1,16 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import style from "./Home.module.css";
-import FondHome from "../Assets/FondHome.gif";
+import style from "./home.module.css";
+import FondHome from "../Assets/FondHome.mp4";
 
 const Home = () => {
   return (
-    <div
-      className={style.home}
-      style={{
-        backgroundImage: `url(${FondHome})`,
-      }}
-    >
+    <div className={style.home}>
+      <video
+        className={style.videoBg}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+      >
+        <source src={FondHome} type="video/mp4" />
+      </video>
       <div className={style.textes}>
         <h1 className={style.titreBM}>BALLMAKERS</h1>
         <p>Photographie / Vidéo / Graphisme</p>
