@@ -1,4 +1,15 @@
 .titre {
-    margin-left: 50px;
-    margin-top: 140px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    text-align: left;
+    position: relative;
+}
+
+.affichageHorizontal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

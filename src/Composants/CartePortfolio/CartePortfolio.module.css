@@ -1,38 +1,40 @@
 .CartePortfolio {
     text-decoration: none;
     color: inherit;
-    display: flex;
-    flex-direction: column;
-}
+    width: 100%;
+    max-width: 360px;
 
-.CartePortfolio {
-    width: 360px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+
     border: rgba(185, 185, 185, 0.2) solid 0.5px;
     border-radius: 12px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
+    padding: 5px;
+
     background-color: rgba(134, 134, 134, 0.1);
     backdrop-filter: blur(15px);
+
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.imageContainer {
+.CartePortfolio:hover {
+    transform: translateY(-5px);
+}
+
+.imageWrapper {
     width: 100%;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: 12px;
-    background-color: #f3f3f3;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    background-color: #111;
 }
 
-.imageContainer img {
+.imageWrapper img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    object-fit: contain;
 }
 
 .textes {
@@ -40,6 +42,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 4px 2px 2px 2px;
 }
 
 .texteTitre {

@@ -34,7 +34,7 @@ const VisuelsAffiches = ({
           src={image}
           alt={titre}
           className={style.imageAffiche}
-          priorite={priorite ? "eager" : "lazy"}
+          loading={priorite ? "eager" : "lazy"}
         />
 
         <button

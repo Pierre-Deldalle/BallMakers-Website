@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import style from "./Header.module.css";
-import logoTexte from "../../Assets/Logos/logo-petit.png";
+import logoTexte from "../../Assets/Logos/logo-petit.webp";
 
 const Header = () => {
   const location = useLocation();

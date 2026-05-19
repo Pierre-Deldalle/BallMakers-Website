@@ -19,8 +19,9 @@
 }
 
 .logo {
+    width: 170px;
     height: 85px;
-    width: auto;
+    object-fit: contain;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
