@@ -10,15 +10,14 @@ const Lightbox = ({
   onSuivant,
 }) => {
   const visuel = visuels[indexActif];
-  const hasPrecedent = indexActif > 0;
-  const hasSuivant = indexActif < visuels.length - 1;
 
   const handleKeyDown = useCallback(
     (e) => {
-      if (e.key === "ArrowLeft" && hasPrecedent) onPrecedent();
-      if (e.key === "ArrowRight" && hasSuivant) onSuivant();
+      if (e.key === "ArrowLeft") onPrecedent();
+      if (e.key === "ArrowRight") onSuivant();
+      if (e.key === "Escape") onFermer();
     },
-    [onFermer, onPrecedent, onSuivant, hasPrecedent, hasSuivant],
+    [onFermer, onPrecedent, onSuivant],
   );
 
   useEffect(() => {
@@ -30,39 +29,57 @@ const Lightbox = ({
     };
   }, [handleKeyDown]);
 
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) onFermer();
-  };
-
   return createPortal(
     <div
       className={style.overlay}
-      onClick={handleOverlayClick}
       role="dialog"
       aria-modal="true"
       aria-label={`Image agrandie : ${visuel.titre}`}
     >
-      {hasPrecedent && (
-        <button
-          className={`${style.boutonNav} ${style.boutonPrecedent}`}
-          onClick={onPrecedent}
-          aria-label="Image précédente"
+      {/* Zone de fond cliquable pour fermer — derrière tout le reste */}
+      <div className={style.fond} onClick={onFermer} aria-hidden="true" />
+      {/* Bouton fermer */}
+      <button
+        className={style.boutonFermer}
+        onClick={onFermer}
+        aria-label="Fermer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-      )}
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      {/* Bouton précédent — toujours visible car navigation circulaire */}
+      <button
+        className={`${style.boutonNav} ${style.boutonPrecedent}`}
+        onClick={onPrecedent}
+        aria-label="Image précédente"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
 
       <div className={style.contenu}>
         <img
@@ -71,32 +88,31 @@ const Lightbox = ({
           className={style.imageLightbox}
         />
         <div className={style.legendes}>
-          <p className={style.legendeTitre}>{visuel.titre}</p>
-          <p className={style.legendeDate}>{visuel.date}</p>
+          {visuel.titre && <p className={style.legendeTitre}>{visuel.titre}</p>}
+          {visuel.date && <p className={style.legendeDate}>{visuel.date}</p>}
         </div>
       </div>
 
-      {hasSuivant && (
-        <button
-          className={`${style.boutonNav} ${style.boutonSuivant}`}
-          onClick={onSuivant}
-          aria-label="Image suivante"
+      {/* Bouton suivant — toujours visible car navigation circulaire */}
+      <button
+        className={`${style.boutonNav} ${style.boutonSuivant}`}
+        onClick={onSuivant}
+        aria-label="Image suivante"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-      )}
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
 
       <div className={style.compteur}>
         {indexActif + 1} / {visuels.length}

@@ -81,6 +81,16 @@
   justify-content: center;
 }
 
+/* Fond transparent absolu qui couvre tout l'overlay,
+   placé derrière le contenu (z-index bas).
+   Un clic dessus ferme la lightbox. */
+.fond {
+  position: absolute;
+  inset: 0;
+  z-index: 1001;
+  cursor: default;
+}
+
 .contenu {
   position: relative;
   width: 90%;
@@ -92,6 +102,8 @@
   align-items: center;
   justify-content: center;
   z-index: 1005;
+  /* pointer-events sur le contenu bloque la propagation vers .fond */
+  pointer-events: auto;
 }
 
 .imageLightbox {

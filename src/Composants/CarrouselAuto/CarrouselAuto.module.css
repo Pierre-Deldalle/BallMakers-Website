@@ -1,0 +1,94 @@
+.banner {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 30%,
+            black 90%,
+            transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 30%,
+            black 90%,
+            transparent 100%);
+}
+
+.bannerTrack {
+    display: flex;
+    height: 100%;
+    animation: scroll 50s linear infinite;
+}
+
+.imageContainer {
+    position: relative;
+    height: 100%;
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.bannerImage {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.overlayVisible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.boutonAgrandir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.boutonAgrandir:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.imageTitre {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 0 8px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-1 * var(--total-width)));
+    }
+}
