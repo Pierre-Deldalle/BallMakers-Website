@@ -1,6 +1,6 @@
 import React from "react";
 import CartePortfolio from "../Composants/CartePortfolio/CartePortfolio";
-import style from "./Creations.module.css";
+import style from "./creations.module.css";
 
 import Affiche from "../Assets/Cartes/Affiche.webp";
 import Instagram from "../Assets/Cartes/Instagram.webp";
