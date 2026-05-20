@@ -1,10 +1,12 @@
 import React from "react";
 import style from "./Footer.module.css";
 import { Link } from "react-router-dom";
+import LogoJoueur from "../../Assets/Logos/logoDessin.PnG";
 
 const Footer = () => {
   return (
     <footer className={style.footer}>
+      <img className={style.logoJoueur} src={LogoJoueur} alt="Logo" />
       <div className={style.container}>
         <div className={style.section}>
           <h3 className={style.logo}>BallMakers</h3>
@@ -13,6 +15,9 @@ const Footer = () => {
             BallMakers afin de partager mes créations dans le monde du basket.
             Je fais notamment des photos, des vidéos et des visuels pour mes
             différents projets.
+            <br />
+            <br />
+            deufefueuh
           </p>
         </div>
 
@@ -36,7 +41,7 @@ const Footer = () => {
 
         <div className={style.section}>
           <h4>Contact</h4>
-          <p>Email : ton adresse mail tdc.com</p>
+          <p>Email : ballmakers92@icloud.com</p>
         </div>
 
         <div className={style.section}>
@@ -62,7 +67,14 @@ const Footer = () => {
 
       <div className={style.bottom}>
         © {new Date().getFullYear()} BallMakers — Tous droits réservés - Site
-        développé par DELDALLE Pierre
+        développé par{" "}
+        <a
+          href="https://www.linkedin.com/in/pierre-deldalle/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          DELDALLE Pierre
+        </a>
       </div>
     </footer>
   );
