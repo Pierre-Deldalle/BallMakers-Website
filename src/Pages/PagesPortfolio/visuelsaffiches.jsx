@@ -95,18 +95,21 @@ const visuelsaffiches = () => {
   return (
     <div>
       <h1 className={style.titre}>· Affiches/Visuels</h1>
+      <div className={style.fadeIn}>
+        <GalerieVisuels
+          visuels={visuelsGrille}
+          onOuvrirLightbox={ouvrirLightbox}
+          offsetIndex={0}
+        />
+      </div>
 
-      <GalerieVisuels
-        visuels={visuelsGrille}
-        onOuvrirLightbox={ouvrirLightbox}
-        offsetIndex={0}
-      />
-
-      <CarrouselAuto
-        images={visuelsCarrousel}
-        offsetIndex={offsetCarrousel}
-        onOuvrirLightbox={ouvrirLightbox}
-      />
+      <div className={style.fadeInDelay}>
+        <CarrouselAuto
+          images={visuelsCarrousel}
+          offsetIndex={offsetCarrousel}
+          onOuvrirLightbox={ouvrirLightbox}
+        />
+      </div>
 
       {indexActif !== null && (
         <Lightbox
