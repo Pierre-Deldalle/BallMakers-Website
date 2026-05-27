@@ -15,7 +15,6 @@
     padding: 0;
 }
 
-/* Overlay qui permet de séparer le texte du fond */
 .home::after {
     content: "";
     position: absolute;
@@ -89,4 +88,20 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
+}
+
+.signature {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 4;
+    color: white;
+    margin: 0;
+    font-size: 12px;
+}
+
+.signature a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
 }

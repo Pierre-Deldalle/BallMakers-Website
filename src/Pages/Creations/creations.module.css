@@ -7,6 +7,18 @@
     overflow: hidden;
 }
 
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px);
+    background-size: 6px 6px;
+    pointer-events: none;
+    z-index: 1;
+}
+
 .titre {
     font-size: 42px;
     font-weight: 700;
@@ -26,31 +38,33 @@
     z-index: 2;
 }
 
-.bg-circle {
+.blob1 {
     position: absolute;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    filter: blur(140px);
-    opacity: 0.12;
-    pointer-events: none;
-    z-index: 0;
-
-    animation: float 14s ease-in-out infinite;
-}
-
-.circle-1 {
-    width: 500px;
-    height: 500px;
-    top: 100px;
-    right: -150px;
-}
-
-.circle-2 {
-    width: 420px;
-    height: 420px;
-    top: 900px;
+    background: #ffffff;
+    filter: blur(120px);
+    opacity: 0.26;
+    top: -120px;
     left: -120px;
+    z-index: 0;
 }
+
+.blob2 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: #ffffff;
+    filter: blur(140px);
+    opacity: 0.15;
+    top: 100px;
+    right: 150px;
+    z-index: 0;
+}
+
+
 
 @keyframes float {
     0% {
