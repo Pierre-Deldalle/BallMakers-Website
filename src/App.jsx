@@ -4,27 +4,29 @@ import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 
 // Pages principales
-const Home = lazy(() => import("./Pages/home"));
-const Creations = lazy(() => import("./Pages/creations"));
-const Collaborations = lazy(() => import("./Pages/collaborations"));
-const Reseaux = lazy(() => import("./Pages/reseaux"));
+const Home = lazy(() => import("./Pages/Home/home"));
+const Creations = lazy(() => import("./Pages/Creations/creations"));
+const Collaborations = lazy(
+  () => import("./Pages/Collaborations/collaborations"),
+);
+const Reseaux = lazy(() => import("./Pages/Reseaux/reseaux"));
 
 // Pages portfolio
 const HighlightsJoueurs = lazy(
-  () => import("./Pages/PagesPortfolio/highlightsjoueurs"),
+  () => import("./Pages/PagesPortfolio/HighlightsJoueurs/highlightsJoueurs"),
 );
 const PhotosShooting = lazy(
-  () => import("./Pages/PagesPortfolio/photosshooting"),
+  () => import("./Pages/PagesPortfolio/PhotosShooting/photosShooting"),
 );
 const ReelsInstagram = lazy(
-  () => import("./Pages/PagesPortfolio/reelsinstagram"),
+  () => import("./Pages/PagesPortfolio/ReelsInstagram/reelsInstagram"),
 );
-const Trailers = lazy(() => import("./Pages/PagesPortfolio/trailers"));
+const Trailers = lazy(() => import("./Pages/PagesPortfolio/Trailers/Trailers"));
 const VideosYoutube = lazy(
-  () => import("./Pages/PagesPortfolio/videosyoutube"),
+  () => import("./Pages/PagesPortfolio/VideosYoutube/videosYoutube"),
 );
 const VisuelsAffiches = lazy(
-  () => import("./Pages/PagesPortfolio/visuelsaffiches"),
+  () => import("./Pages/PagesPortfolio/VisuelsAffiches/visuelsAffiches"),
 );
 
 function App() {

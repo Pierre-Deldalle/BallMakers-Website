@@ -1,20 +1,20 @@
-import GalerieVisuels from "../../Composants/AffichageVisuels/GalerieVisuels";
-import Footer from "../../Composants/Footer/footer";
+import GalerieVisuels from "../../../Composants/AffichageVisuels/GalerieVisuels";
+import Footer from "../../../Composants/Footer/footer";
 import style from "./visuelsaffiches.module.css";
-import Affiche1 from "../../Assets/Affiches/Affiche1.webp";
-import Affiche2 from "../../Assets/Affiches/Affiche2.webp";
-import Affiche3 from "../../Assets/Affiches/Affiche3.webp";
-import Affiche4 from "../../Assets/Affiches/Affiche4.webp";
-import Affiche5 from "../../Assets/Affiches/Affiche5.webp";
-import Affiche6 from "../../Assets/Affiches/Affiche6.webp";
-import Affiche7 from "../../Assets/Affiches/Affiche7.webp";
-import Affiche8 from "../../Assets/Affiches/Affiche8.webp";
-import Affiche9 from "../../Assets/Affiches/Affiche9.webp";
-import Affiche10 from "../../Assets/Affiches/Affiche10.webp";
-import Affiche11 from "../../Assets/Affiches/Affiche11.webp";
-import Affiche12 from "../../Assets/Affiches/Affiche12.webp";
-import CarrouselAuto from "../../Composants/CarrouselAuto/CarrouselAuto";
-import Lightbox from "../../Composants/AffichageVisuels/Lightbox";
+import Affiche1 from "../../../Assets/Affiches/Affiche1.webp";
+import Affiche2 from "../../../Assets/Affiches/Affiche2.webp";
+import Affiche3 from "../../../Assets/Affiches/Affiche3.webp";
+import Affiche4 from "../../../Assets/Affiches/Affiche4.webp";
+import Affiche5 from "../../../Assets/Affiches/Affiche5.webp";
+import Affiche6 from "../../../Assets/Affiches/Affiche6.webp";
+import Affiche7 from "../../../Assets/Affiches/Affiche7.webp";
+import Affiche8 from "../../../Assets/Affiches/Affiche8.webp";
+import Affiche9 from "../../../Assets/Affiches/Affiche9.webp";
+import Affiche10 from "../../../Assets/Affiches/Affiche10.webp";
+import Affiche11 from "../../../Assets/Affiches/Affiche11.webp";
+import Affiche12 from "../../../Assets/Affiches/Affiche12.webp";
+import CarrouselAuto from "../../../Composants/CarrouselAuto/CarrouselAuto";
+import Lightbox from "../../../Composants/AffichageVisuels/Lightbox";
 import { useState } from "react";
 
 const visuelsaffiches = () => {

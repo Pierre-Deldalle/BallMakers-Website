@@ -1,14 +1,14 @@
 import React from "react";
-import CartePortfolio from "../Composants/CartePortfolio/CartePortfolio";
+import CartePortfolio from "../../Composants/CartePortfolio/CartePortfolio";
 import style from "./creations.module.css";
 
-import Affiche from "../Assets/Cartes/Affiche.webp";
-import Instagram from "../Assets/Cartes/Instagram.webp";
-import Shooting from "../Assets/Cartes/Shooting.webp";
-import Trailer from "../Assets/Cartes/Trailer.webp";
-import Youtube from "../Assets/Cartes/Youtube.webp";
-import Highlights from "../Assets/Cartes/Highlights.webp";
-import Footer from "../Composants/Footer/footer";
+import Affiche from "../../Assets/Cartes/Affiche.webp";
+import Instagram from "../../Assets/Cartes/Instagram.webp";
+import Shooting from "../../Assets/Cartes/Shooting.webp";
+import Trailer from "../../Assets/Cartes/Trailer.webp";
+import Youtube from "../../Assets/Cartes/Youtube.webp";
+import Highlights from "../../Assets/Cartes/Highlights.webp";
+import Footer from "../../Composants/Footer/footer";
 
 const Creations = () => {
   return (
