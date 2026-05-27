@@ -23,17 +23,6 @@ const Home = () => {
       <Link to="/creations">
         <button className={style.boutonCreations}>Créations</button>
       </Link>
-
-      <p className={style.signature}>
-        Site développé par{" "}
-        <a
-          href="https://www.linkedin.com/in/pierre-deldalle/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Pierre DELDALLE
-        </a>
-      </p>
     </div>
   );
 };
