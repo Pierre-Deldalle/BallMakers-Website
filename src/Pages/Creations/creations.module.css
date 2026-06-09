@@ -57,7 +57,7 @@
     height: 600px;
     border-radius: 50%;
     background: #ffffff;
-    filter: blur(140px);
+    filter: blur(55px);
     opacity: 0.15;
     top: 100px;
     right: 150px;

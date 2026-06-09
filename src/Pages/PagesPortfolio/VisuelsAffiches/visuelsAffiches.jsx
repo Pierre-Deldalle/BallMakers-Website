@@ -93,8 +93,11 @@ const visuelsaffiches = () => {
   const offsetCarrousel = visuelsGrille.length;
 
   return (
-    <div>
-      <h1 className={style.titre}>· Affiches/Visuels</h1>
+    <div className={style.container}>
+      <div className={style.alignementTextes}>
+        <h1 className={style.titre}>· Affiches/Visuels</h1>
+        <h4 className={style.sousTitre}>Description à venir...</h4>
+      </div>
       <div className={style.fadeIn}>
         <GalerieVisuels
           visuels={visuelsGrille}
@@ -102,14 +105,11 @@ const visuelsaffiches = () => {
           offsetIndex={0}
         />
       </div>
-
-      <div className={style.fadeInDelay}>
-        <CarrouselAuto
-          images={visuelsCarrousel}
-          offsetIndex={offsetCarrousel}
-          onOuvrirLightbox={ouvrirLightbox}
-        />
-      </div>
+      <CarrouselAuto
+        images={visuelsCarrousel}
+        offsetIndex={offsetCarrousel}
+        onOuvrirLightbox={ouvrirLightbox}
+      />
 
       {indexActif !== null && (
         <Lightbox

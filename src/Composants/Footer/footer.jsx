@@ -17,7 +17,12 @@ const Footer = () => {
             différents projets.
             <br />
             <br />
-            deufefueuh
+            Expérience :
+            <br />
+            J'ai commencé la photo et la vidéo en 2021 au club de Cambrai, où je
+            capturais les matchs de mes frères et amis. Depuis 2024, je suis
+            régulièrement l'équipe de l'ABBR pour photographier et filmer les
+            rencontres.
           </p>
         </div>
 

@@ -24,7 +24,6 @@
 
 .imageWrapper {
     width: 100%;
-    aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: 12px;
     background-color: #111;
@@ -32,8 +31,8 @@
 
 .imageWrapper img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     display: block;
 }
 
