@@ -1,66 +1,65 @@
 .tuile {
     position: relative;
     z-index: 2;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 12px;
-    margin: 20px 24px;
-    width: calc(100% - 48px);
-
     display: flex;
-    align-items: stretch;
-    gap: 16px;
-
+    flex-direction: column;
+    padding: 12px;
+    box-sizing: border-box;
     border: rgba(185, 185, 185, 0.2) solid 0.5px;
     border-radius: 12px;
-
     background-color: rgba(33, 33, 33, 0.2);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(30px);
 }
 
 .videoWrapper {
-    width: 40%;
-    flex-shrink: 0;
+    width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 8px;
     overflow: hidden;
     background-color: #111;
+    margin-bottom: 12px;
 }
 
 .meta {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    min-width: 0;
+    gap: 8px;
+    flex: 1;
 }
 
 .textes {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
+    flex: 1;
 }
 
 .titre {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #fff;
 }
 
 .description {
-    font-size: 16px;
+    font-size: 13px;
     color: #888;
-    margin-right: 75px;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
 }
 
 .bas {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: auto;
+    margin-top: 8px;
 }
 
 .date {
@@ -71,10 +70,9 @@
     color: #888;
 }
 
-.boutonYoutube {
+.bouton {
     display: flex;
     align-items: center;
-    gap: 6px;
     font-size: 12px;
     color: #ffffff;
     text-decoration: none;
@@ -83,9 +81,10 @@
     border-radius: 6px;
     background-color: #ff0000;
     transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
 }
 
-.boutonYoutube:hover {
+.bouton:hover {
     background-color: transparent;
     color: #ff0000;
 }

@@ -1,19 +1,44 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
+
 import style from "./header.module.css";
 import logoTexte from "../../Assets/Logos/logo-petit.webp";
 
 const Header = () => {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
   return (
     <header className={style.headerHome}>
       <Link to="/">
-        <img src={logoTexte} alt="LogoBallMakers" className={style.logo} />
+        <img
+          src={logoTexte}
+          alt="Logo BallMakers"
+          className={style.logo}
+        />
       </Link>
+
       <div className={style.nav}>
         <Link to="/creations">Créations</Link>
-        <Link to="/collaborations">Collaborations</Link>
-        <Link to="/reseaux">Réseaux</Link>
+
+        <Link to="/contact">Contact</Link>
+
+        <a
+          href="LIEN_LINKEDIN"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={style.socialIcon}
+          aria-label="LinkedIn"
+        >
+          <FaLinkedinIn />
+        </a>
+
+        <a
+          href="LIEN_INSTAGRAM"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={style.socialIcon}
+          aria-label="Instagram"
+        >
+          <FaInstagram />
+        </a>
       </div>
     </header>
   );

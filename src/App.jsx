@@ -2,14 +2,12 @@ import "./index.css";
 import Header from "./Composants/Header/header";
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import ScrollToTop from "./Composants/ScrollToTop/ScrollToTop";
 
 // Pages principales
 const Home = lazy(() => import("./Pages/Home/home"));
 const Creations = lazy(() => import("./Pages/Creations/creations"));
-const Collaborations = lazy(
-  () => import("./Pages/Collaborations/collaborations"),
-);
-const Reseaux = lazy(() => import("./Pages/Reseaux/reseaux"));
+const Contact = lazy(() => import("./Pages/Contact/contact"));
 
 // Pages portfolio
 const HighlightsJoueurs = lazy(
@@ -33,6 +31,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <ScrollToTop />
       <div className="pages">
         <Suspense
           fallback={
@@ -46,8 +45,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/creations" element={<Creations />} />
-            <Route path="/collaborations" element={<Collaborations />} />
-            <Route path="/reseaux" element={<Reseaux />} />
+            <Route path="/contact" element={<Contact />} />
 
             <Route path="/highlightsjoueurs" element={<HighlightsJoueurs />} />
             <Route path="/photosshooting" element={<PhotosShooting />} />

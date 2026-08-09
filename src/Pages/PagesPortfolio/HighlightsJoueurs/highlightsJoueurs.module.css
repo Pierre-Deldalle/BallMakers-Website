@@ -1,0 +1,85 @@
+.container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+
+.alignementTextes {
+    margin-bottom: 40px;
+}
+
+.titre {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 150px;
+    margin-bottom: 0;
+    margin-left: 60px;
+    text-align: left;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+}
+
+.sousTitre {
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 60px;
+    text-align: left;
+    line-height: 1.4;
+    position: relative;
+    z-index: 2;
+}
+
+.contenu {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 60px;
+}
+
+.grille {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fleche {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(185, 185, 185, 0.3);
+    background-color: rgba(33, 33, 33, 0.2);
+    backdrop-filter: blur(30px);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.fleche:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(185, 185, 185, 0.6);
+}
+
+.fleche:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.pageInfo {
+    font-size: 13px;
+    color: #888;
+    min-width: 40px;
+    text-align: center;
+}

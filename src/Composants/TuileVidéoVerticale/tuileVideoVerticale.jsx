@@ -1,4 +1,4 @@
-import style from "./tuileVideo.module.css";
+import style from "./tuileVideoVerticale.module.css";
 import Video from "../Video/video";
 
 function getPlatformLabel(url) {
@@ -9,7 +9,7 @@ function getPlatformLabel(url) {
   return "Regarder la vidéo";
 }
 
-const TuileVideo = ({ videoURL, titre, description, date }) => {
+const TuileVideoVerticale = ({ videoURL, titre, description, date }) => {
   return (
     <div className={style.tuile}>
       <div className={style.videoWrapper}>
@@ -46,7 +46,7 @@ const TuileVideo = ({ videoURL, titre, description, date }) => {
             href={videoURL}
             target="_blank"
             rel="noreferrer"
-            className={style.boutonYoutube}
+            className={style.bouton}
           >
             {getPlatformLabel(videoURL)}
           </a>
@@ -56,4 +56,4 @@ const TuileVideo = ({ videoURL, titre, description, date }) => {
   );
 };
 
-export default TuileVideo;
+export default TuileVideoVerticale;
