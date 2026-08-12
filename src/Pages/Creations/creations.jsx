@@ -47,7 +47,7 @@ const Creations = () => {
             link="/trailers"
             image={Trailer}
             titre="Trailers"
-            date="2025 - maintenant"
+            date=""
           />
           <CartePortfolio
             link="/videosyoutube"

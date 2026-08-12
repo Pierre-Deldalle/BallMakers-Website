@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaBehance, FaInstagram } from "react-icons/fa";
 
 import style from "./header.module.css";
 import logoTexte from "../../Assets/Logos/logo-petit.webp";
@@ -21,17 +21,17 @@ const Header = () => {
         <Link to="/contact">Contact</Link>
 
         <a
-          href="LIEN_LINKEDIN"
+          href="https://www.behance.net/ballmakers"
           target="_blank"
           rel="noopener noreferrer"
           className={style.socialIcon}
-          aria-label="LinkedIn"
+          aria-label="Behance"
         >
-          <FaLinkedinIn />
+          <FaBehance />
         </a>
 
         <a
-          href="LIEN_INSTAGRAM"
+          href="https://www.instagram.com/_ballmakers_/"
           target="_blank"
           rel="noopener noreferrer"
           className={style.socialIcon}

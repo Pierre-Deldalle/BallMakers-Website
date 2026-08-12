@@ -83,11 +83,11 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://www.instagram.com/_ballmakers_/"
+              href="https://www.behance.net/ballmakers"
               target="_blank"
               rel="noopener noreferrer"
             >
-              LinkedIn
+              Behance
             </a>
 
             <a

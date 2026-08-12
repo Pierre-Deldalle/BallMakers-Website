@@ -13,6 +13,7 @@ import Affiche9 from "../../../Assets/Affiches/Affiche9.webp";
 import Affiche10 from "../../../Assets/Affiches/Affiche10.webp";
 import Affiche11 from "../../../Assets/Affiches/Affiche11.webp";
 import Affiche12 from "../../../Assets/Affiches/Affiche12.webp";
+import Affiche13 from "../../../Assets/Affiches/Affiche13.webp";
 import CarrouselAuto from "../../../Composants/CarrouselAuto/CarrouselAuto";
 import Lightbox from "../../../Composants/AffichageVisuels/Lightbox";
 import { useState } from "react";
@@ -33,10 +34,10 @@ const visuelsaffiches = () => {
       priorite: true,
     },
     {
-      titre: "Statistiques - Berck vs Saint-Vallier",
-      date: "24 janvier 2026",
-      image: Affiche3,
-      fictive: true,
+      titre: "Statistiques Globales - Raijon Kelly",
+      date: "24 mai 2026",
+      image: Affiche13,
+      fictive: false,
       priorite: true,
     },
     {
@@ -75,6 +76,7 @@ const visuelsaffiches = () => {
       image: Affiche7,
     },
     { titre: "Merci Raphaël Pascual", date: "Mai 2026", image: Affiche12 },
+    { titre: "Jour de match - Berck vs Saint-Vallier", date: "24 janvier 2026", image: Affiche3 },
   ];
 
   const tousLesVisuels = [...visuelsGrille, ...visuelsCarrousel];
@@ -96,7 +98,14 @@ const visuelsaffiches = () => {
     <div className={style.container}>
       <div className={style.alignementTextes}>
         <h1 className={style.titre}>· Affiches/Visuels</h1>
-        <h4 className={style.sousTitre}>Description à venir...</h4>
+        <h4 className={style.sousTitre}>
+          Réalisations d'affiches annonçant des matchs, des départs et mettant en avant
+          des statistiques.
+          <br />
+          <em>
+            Les affiches marquées d'un astérisque rouge sont des créations fictives.
+          </em>
+        </h4>
       </div>
       <div className={style.fadeIn}>
         <GalerieVisuels

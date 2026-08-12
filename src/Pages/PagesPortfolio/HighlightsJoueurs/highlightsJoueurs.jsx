@@ -1,114 +1,127 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import Footer from "../../../Composants/Footer/footer";
 import style from "./highlightsJoueurs.module.css";
-import TuileVideoVerticale from "./../../../Composants/TuileVidéoVerticale/tuileVideoVerticale";
 
-const VIDEOS = [
-  {
-    videoURL: "https://www.youtube.com/watch?v=dQw4w9WgXcW",
-    titre: "Highlight — Match 1",
-    description: "Une ligne de description courte.",
-    date: "juin 2026",
-  },
-  {
-    videoURL: "https://www.youtube.com/watch?v=dQw4w9WgXcW",
-    titre: "Highlight — Match 2",
-    description: "Une ligne de description courte.",
-    date: "juin 2026",
-  },
-  {
-    videoURL: "https://www.youtube.com/watch?v=dQw4w9WgXcW",
-    titre: "Highlight — Match 3",
-    description: "Une ligne de description courte.",
-    date: "mai 2026",
-  },
-  {
-    videoURL: "https://www.youtube.com/watch?v=dQw4w9WgXcW",
-    titre: "Highlight — Match 4",
-    description: "Une ligne de description courte.",
-    date: "mai 2026",
-  },
-  {
-    videoURL: "https://www.youtube.com/watch?v=dQw4w9WgXcW",
-    titre: "Highlight — Match 5",
-    description: "Une ligne de description courte.",
-    date: "avril 2026",
-  },
-  {
-    videoURL: "https://www.youtube.com/watch?v=dQw4w9WgXcW",
-    titre: "Highlight — Match 6",
-    description: "Une ligne de description courte.",
-    date: "avril 2026",
-  },
-];
+const getYoutubeId = (url) => {
+  if (!url) return null;
 
-const PER_PAGE = 3;
+  const match = url.match(
+    /(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([^&?/]+)/
+  );
+
+  return match ? match[1] : null;
+};
 
 const HighlightsJoueurs = () => {
-  const [page, setPage] = useState(0);
+  const videos = [
+    {
+      url: "https://www.youtube.com/watch?v=NZhaMrLV-0U&t",
+      titre: "Vidéo 1",
+    },
+    {
+      url: "https://www.youtube.com/watch?v=Vrl-G-jgl4U",
+      titre: "Vidéo 2",
+    },
+    {
+      url: "https://www.youtube.com/watch?v=fJ5Ept9jLTM",
+      titre: "Vidéo 3",
+    },
+    {
+      url: "https://www.youtube.com/watch?v=KeIiBJ6uR9w",
+      titre: "Vidéo 4",
+    },
+    {
+      url: "https://www.youtube.com/watch?v=jjbgeuzy30I",
+      titre: "Vidéo 5",
+    },
+    {
+      url: "https://www.youtube.com/watch?v=o-KWbpr_248",
+      titre: "Vidéo 6",
+    },
+    {
+      url: "https://www.youtube.com/watch?v=1VAwTiFIfPU",
+      titre: "Vidéo 7",
+    },
+    {
+      url: "https://www.youtube.com/watch?v=Hkqb1dCb7tE",
+      titre: "Vidéo 8",
+    },
+  ];
 
-  const totalPages = Math.ceil(VIDEOS.length / PER_PAGE);
-  const current = VIDEOS.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE);
+  const [videoActive, setVideoActive] = useState(null);
+
+  const afficherVideo = (video, index, classe = "") => {
+    const videoId = getYoutubeId(video.url);
+
+    if (!videoId) return null;
+
+    const miniature = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+    return (
+      <div className={`${style.videoCard} ${classe}`} key={index}>
+        {videoActive === index ? (
+          <iframe
+            className={style.iframe}
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
+            title={video.titre}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <button
+            className={style.miniature}
+            onClick={() => setVideoActive(index)}
+            style={{
+              backgroundImage: `url(${miniature})`,
+            }}
+            aria-label={`Lire ${video.titre}`}
+          >
+            <div className={style.overlay}></div>
+
+            <div className={style.playButton}>
+              <span className={style.playTriangle}></span>
+            </div>
+          </button>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className={style.container}>
-      <div className={style.alignementTextes}>
-        <h1 className={style.titre}>· Highlights</h1>
-        <h4 className={style.sousTitre}>Description à venir...</h4>
-      </div>
+      <h1 className={style.titre}>· Highlights Joueurs</h1>
 
-      <div className={style.contenu}>
-        <div className={style.grille}>
-          {current.map((video, i) => (
-            <TuileVideoVerticale key={page * PER_PAGE + i} {...video} />
-          ))}
-        </div>
+      <p className={style.sousTitre}>
+        Réalisation de vidéos Highlights pour mettre en avant les performances des joueurs, que ce soit pour trouver un nouveau club ou simplement faire le bilan de leur saison.
+      </p>
 
-        <div className={style.navigation}>
-          <button
-            className={style.fleche}
-            onClick={() => setPage((p) => p - 1)}
-            disabled={page === 0}
-            aria-label="Groupe précédent"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              width="20"
-              height="20"
-            >
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
+      <main className={style.contenu}>
+        {/* Deux vidéos */}
+        <section className={`${style.deuxVideos} ${style.fadeIn}`}>
+          {afficherVideo(videos[0], 0)}
+          {afficherVideo(videos[1], 1)}
+        </section>
 
-          <span className={style.pageInfo}>
-            {page + 1} / {totalPages}
-          </span>
+        {/* Grande vidéo */}
+        <section className={style.fadeIn}>
+          {afficherVideo(videos[2], 2, style.grandeVideo)}
+        </section>
 
-          <button
-            className={style.fleche}
-            onClick={() => setPage((p) => p + 1)}
-            disabled={page >= totalPages - 1}
-            aria-label="Groupe suivant"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              width="20"
-              height="20"
-            >
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
-        </div>
-      </div>
+        {/* Quatre vidéos */}
+        <section className={`${style.quatreVideos} ${style.fadeIn}`}>
+          {afficherVideo(videos[3], 3)}
+          {afficherVideo(videos[4], 4)}
+          {afficherVideo(videos[5], 5)}
+          {afficherVideo(videos[6], 6)}
+        </section>
+
+        {/* Dernière grande vidéo */}
+        <section className={style.fadeIn}>
+          {afficherVideo(videos[7], 7, style.grandeVideo)}
+        </section>
+      </main>
+
+      <Footer />
     </div>
   );
 };

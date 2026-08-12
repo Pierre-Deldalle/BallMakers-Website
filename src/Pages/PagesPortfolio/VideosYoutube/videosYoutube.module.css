@@ -230,14 +230,6 @@
 }
 
 
-.quatreVideos {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 30px;
-}
-
 
 /* =========================
    ANIMATION
@@ -260,33 +252,3 @@
     }
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
-
-    .titre,
-    .sousTitre {
-        margin-left: 25px;
-        margin-right: 25px;
-    }
-
-
-    .contenu {
-        width: calc(100% - 50px);
-    }
-
-
-    .deuxVideos,
-    .quatreVideos {
-        grid-template-columns: 1fr;
-    }
-
-
-    .playButton {
-        width: 65px;
-        height: 45px;
-    }
-}
