@@ -1,20 +1,21 @@
-import GalerieVisuels from "../../Composants/AffichageVisuels/GalerieVisuels";
-import Footer from "../../Composants/Footer/footer";
+import GalerieVisuels from "../../../Composants/AffichageVisuels/GalerieVisuels";
+import Footer from "../../../Composants/Footer/footer";
 import style from "./visuelsaffiches.module.css";
-import Affiche1 from "../../Assets/Affiches/Affiche1.webp";
-import Affiche2 from "../../Assets/Affiches/Affiche2.webp";
-import Affiche3 from "../../Assets/Affiches/Affiche3.webp";
-import Affiche4 from "../../Assets/Affiches/Affiche4.webp";
-import Affiche5 from "../../Assets/Affiches/Affiche5.webp";
-import Affiche6 from "../../Assets/Affiches/Affiche6.webp";
-import Affiche7 from "../../Assets/Affiches/Affiche7.webp";
-import Affiche8 from "../../Assets/Affiches/Affiche8.webp";
-import Affiche9 from "../../Assets/Affiches/Affiche9.webp";
-import Affiche10 from "../../Assets/Affiches/Affiche10.webp";
-import Affiche11 from "../../Assets/Affiches/Affiche11.webp";
-import Affiche12 from "../../Assets/Affiches/Affiche12.webp";
-import CarrouselAuto from "../../Composants/CarrouselAuto/CarrouselAuto";
-import Lightbox from "../../Composants/AffichageVisuels/Lightbox";
+import Affiche1 from "../../../Assets/Affiches/Affiche1.webp";
+import Affiche2 from "../../../Assets/Affiches/Affiche2.webp";
+import Affiche3 from "../../../Assets/Affiches/Affiche3.webp";
+import Affiche4 from "../../../Assets/Affiches/Affiche4.webp";
+import Affiche5 from "../../../Assets/Affiches/Affiche5.webp";
+import Affiche6 from "../../../Assets/Affiches/Affiche6.webp";
+import Affiche7 from "../../../Assets/Affiches/Affiche7.webp";
+import Affiche8 from "../../../Assets/Affiches/Affiche8.webp";
+import Affiche9 from "../../../Assets/Affiches/Affiche9.webp";
+import Affiche10 from "../../../Assets/Affiches/Affiche10.webp";
+import Affiche11 from "../../../Assets/Affiches/Affiche11.webp";
+import Affiche12 from "../../../Assets/Affiches/Affiche12.webp";
+import Affiche13 from "../../../Assets/Affiches/Affiche13.webp";
+import CarrouselAuto from "../../../Composants/CarrouselAuto/CarrouselAuto";
+import Lightbox from "../../../Composants/AffichageVisuels/Lightbox";
 import { useState } from "react";
 
 const visuelsaffiches = () => {
@@ -33,10 +34,10 @@ const visuelsaffiches = () => {
       priorite: true,
     },
     {
-      titre: "Statistiques - Berck vs Saint-Vallier",
-      date: "24 janvier 2026",
-      image: Affiche3,
-      fictive: true,
+      titre: "Statistiques Globales - Raijon Kelly",
+      date: "24 mai 2026",
+      image: Affiche13,
+      fictive: false,
       priorite: true,
     },
     {
@@ -75,6 +76,7 @@ const visuelsaffiches = () => {
       image: Affiche7,
     },
     { titre: "Merci Raphaël Pascual", date: "Mai 2026", image: Affiche12 },
+    { titre: "Jour de match - Berck vs Saint-Vallier", date: "24 janvier 2026", image: Affiche3 },
   ];
 
   const tousLesVisuels = [...visuelsGrille, ...visuelsCarrousel];
@@ -93,15 +95,25 @@ const visuelsaffiches = () => {
   const offsetCarrousel = visuelsGrille.length;
 
   return (
-    <div>
-      <h1 className={style.titre}>· Affiches/Visuels</h1>
-
-      <GalerieVisuels
-        visuels={visuelsGrille}
-        onOuvrirLightbox={ouvrirLightbox}
-        offsetIndex={0}
-      />
-
+    <div className={style.container}>
+      <div className={style.alignementTextes}>
+        <h1 className={style.titre}>· Affiches/Visuels</h1>
+        <h4 className={style.sousTitre}>
+          Réalisations d'affiches annonçant des matchs, des départs et mettant en avant
+          des statistiques.
+          <br />
+          <em>
+            Les affiches marquées d'un astérisque rouge sont des créations fictives.
+          </em>
+        </h4>
+      </div>
+      <div className={style.fadeIn}>
+        <GalerieVisuels
+          visuels={visuelsGrille}
+          onOuvrirLightbox={ouvrirLightbox}
+          offsetIndex={0}
+        />
+      </div>
       <CarrouselAuto
         images={visuelsCarrousel}
         offsetIndex={offsetCarrousel}

@@ -1,0 +1,54 @@
+.containerVideo {
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #111;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.2s ease;
+}
+
+.overlay:hover {
+    filter: brightness(1.1);
+}
+
+.playButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.overlay:hover .playButton {
+    background-color: rgba(0, 0, 0, 0.85);
+    transform: scale(1.08);
+}
