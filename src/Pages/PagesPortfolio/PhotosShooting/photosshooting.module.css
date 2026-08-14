@@ -1,9 +1,403 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+.container::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.03) 50%,
+            rgba(0, 0, 0, 0.08) 100%
+        ),
+        radial-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 100% 100%, 6px 6px;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   TITRES
+========================= */
+
 .titre {
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 25px;
-    margin-left: 20px;
+
+    margin-top: 150px;
+    margin-bottom: 0;
+    margin-left: 60px;
+
     text-align: left;
+
     position: relative;
     z-index: 2;
+
+    line-height: 1.2;
+}
+
+
+.sousTitre {
+    font-size: 18px;
+    font-weight: 400;
+
+    margin-left: 60px;
+    margin-top: 10px;
+
+    color: #aaaaaa;
+
+    text-align: left;
+
+    position: relative;
+    z-index: 2;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   CONTENU
+========================= */
+
+.contenu {
+    width: calc(100% - 120px);
+    max-width: 1250px;
+
+    margin: 70px auto 100px auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 100px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================
+   GALERIE EDITORIALE
+========================= */
+
+.galerieEditoriale {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 100px;
+}
+
+
+.duo {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    gap: 45px;
+
+    align-items: center;
+}
+
+
+.grandeDroite {
+    grid-template-columns: 0.85fr 1.15fr;
+}
+
+
+/* =========================
+   PHOTOS EDITORIALES
+========================= */
+
+.photoEditoriale {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    position: relative;
+}
+
+
+.photoGrande {
+    height: 700px;
+}
+
+
+.photoPetite {
+    height: 590px;
+}
+
+
+.photoEditoriale img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+.photoEditoriale:hover img {
+    transform: scale(1.025);
+
+    filter: brightness(0.85);
+}
+
+
+/* =========================
+   GRILLE 2 x 3
+========================= */
+
+.grillePhotos {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.photoGrille {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.photoGrille img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+.photoGrille:hover img {
+    transform: scale(1.04);
+
+    filter: brightness(0.82);
+}
+
+
+.deuxPhotos {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+
+    gap: 30px;
+    align-items: center;
+}
+
+.photoDouble {
+    width: 100%;
+
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+
+    overflow: hidden;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+/* Petite photo à gauche */
+.photoDouble:first-child {
+    height: 500px;
+}
+
+/* Grande photo à droite */
+.photoDouble:last-child {
+    height: 650px;
+}
+
+.photoDouble img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.photoDouble:hover img {
+    transform: scale(1.03);
+    filter: brightness(0.85);
+}
+
+/* =========================
+   VIDEOS SHOOTING
+========================= */
+
+.videosShooting {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    /* Évite qu'elles deviennent gigantesques */
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.videoShooting {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background-color: #050505;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+/* =========================
+   APPARITION
+========================= */
+
+.photoEditoriale,
+.photoGrille,
+.featuredPhoto {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    animation: apparition 0.8s ease forwards;
+}
+
+
+@keyframes apparition {
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .titre,
+    .sousTitre {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+
+    .contenu {
+        width: calc(100% - 50px);
+
+        gap: 60px;
+    }
+
+
+    .galerieEditoriale {
+        gap: 45px;
+    }
+
+
+    .duo,
+    .grandeDroite {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .photoGrande,
+    .photoPetite {
+        height: auto;
+
+        aspect-ratio: 4 / 5;
+    }
+
+
+    .grillePhotos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .featuredPhoto {
+        height: auto;
+
+        aspect-ratio: 16 / 10;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .grillePhotos {
+        grid-template-columns: 1fr;
+    }
 }

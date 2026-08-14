@@ -24,10 +24,6 @@ const Footer = () => {
           <h3 className={style.logo}>BallMakers</h3>
 
           <p>{t("footer.description")}</p>
-
-          <h4>{t("footer.experienceTitle")}</h4>
-
-          <p>{t("footer.experience")}</p>
         </div>
 
         <div className={style.section}>

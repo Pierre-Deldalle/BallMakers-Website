@@ -55,7 +55,7 @@ const HighlightsJoueurs = () => {
 
     if (!videoId) return null;
 
-    const miniature = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+    const miniature = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
     return (
       <div className={`${style.videoCard} ${classe}`} key={index}>

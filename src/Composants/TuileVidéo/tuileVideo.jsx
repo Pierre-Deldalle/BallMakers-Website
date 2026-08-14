@@ -1,19 +1,44 @@
 import style from "./tuileVideo.module.css";
-import Video from "../Video/video";
 
 function getPlatformLabel(url) {
   if (!url) return "Regarder la vidéo";
-  if (url.includes("youtube.com") || url.includes("youtu.be"))
+
+  if (url.includes("youtube.com") || url.includes("youtu.be")) {
     return "Regarder sur YouTube";
-  if (url.includes("vimeo.com")) return "Regarder sur Vimeo";
+  }
+
+  if (url.includes("vimeo.com")) {
+    return "Regarder sur Vimeo";
+  }
+
   return "Regarder la vidéo";
 }
 
+function getYoutubeId(url) {
+  if (!url) return null;
+
+  const match = url.match(
+    /(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([^&?/]+)/
+  );
+
+  return match ? match[1] : null;
+}
+
 const TuileVideo = ({ videoURL, titre, description, date }) => {
+  const youtubeId = getYoutubeId(videoURL);
+
   return (
     <div className={style.tuile}>
       <div className={style.videoWrapper}>
-        <Video videoURL={videoURL} />
+        {youtubeId && (
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeId}?rel=0`}
+            title={titre}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className={style.video}
+          />
+        )}
       </div>
 
       <div className={style.meta}>
@@ -39,6 +64,7 @@ const TuileVideo = ({ videoURL, titre, description, date }) => {
               <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
               <path d="M12 7v5l3 3" />
             </svg>
+
             {date}
           </span>
 
