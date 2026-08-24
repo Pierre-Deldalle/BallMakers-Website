@@ -29,6 +29,14 @@ app.use(express.json());
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 /* =========================
+   TEST API
+========================= */
+
+app.get("/", (req, res) => {
+  res.send("BallMakers API is running!");
+});
+
+/* =========================
    CONTACT
 ========================= */
 
@@ -44,16 +52,14 @@ app.post("/api/contact", async (req, res) => {
       message,
     } = req.body;
 
-    /* Vérification des champs obligatoires */
-
+    // Vérification des champs obligatoires
     if (!nom || !prenom || !email || !projet || !message) {
       return res.status(400).json({
         message: "Veuillez remplir tous les champs obligatoires.",
       });
     }
 
-    /* Envoi de l'email */
-
+    // Envoi de l'email
     const { data, error } = await resend.emails.send({
       from: "BallMakers <onboarding@resend.dev>",
 
@@ -67,9 +73,7 @@ app.post("/api/contact", async (req, res) => {
         <h2>Nouvelle demande depuis BallMakers</h2>
 
         <p><strong>Nom :</strong> ${nom}</p>
-
         <p><strong>Prénom :</strong> ${prenom}</p>
-
         <p><strong>Email :</strong> ${email}</p>
 
         <p>
@@ -95,25 +99,22 @@ app.post("/api/contact", async (req, res) => {
       `,
     });
 
-    /* Erreur Resend */
-
+    // Erreur Resend
     if (error) {
-      console.error(error);
+      console.error("Erreur Resend :", error);
 
       return res.status(500).json({
         message: "Impossible d'envoyer le message.",
       });
     }
 
-    /* Succès */
-
+    // Succès
     return res.status(200).json({
       message: "Message envoyé avec succès.",
       data,
     });
-
   } catch (error) {
-    console.error(error);
+    console.error("Erreur serveur :", error);
 
     return res.status(500).json({
       message: "Une erreur est survenue.",
@@ -128,5 +129,5 @@ app.post("/api/contact", async (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Serveur lancé sur le port ${PORT}`);
+  console.log(`Serveur BallMakers lancé sur le port ${PORT}`);
 });
