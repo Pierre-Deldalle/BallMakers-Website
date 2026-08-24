@@ -1,8 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import style from "./Formulaire.module.css";
 import LogoDessin from "../../Assets/Logos/logoDessin.webp";
 
 const Formulaire = () => {
+  const { t } = useTranslation();
+
+  const [formData, setFormData] = useState({
+    nom: "",
+    prenom: "",
+    email: "",
+    organisation: "",
+    projet: "",
+    budget: "",
+    message: "",
+  });
+
+  const [statut, setStatut] = useState("");
+  const [envoi, setEnvoi] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((ancienFormulaire) => ({
+      ...ancienFormulaire,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setEnvoi(true);
+    setStatut("");
+
+    try {
+      const response = await fetch("http://localhost:3000/api/contact", {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message);
+      }
+
+      setStatut(t("contact.success"));
+
+      setFormData({
+        nom: "",
+        prenom: "",
+        email: "",
+        organisation: "",
+        projet: "",
+        budget: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+
+      setStatut(t("contact.error"));
+    } finally {
+      setEnvoi(false);
+    }
+  };
+
   return (
     <section className={style.formulaireSection}>
       <div className={style.contactLayout}>
@@ -16,110 +84,175 @@ const Formulaire = () => {
 
         <div className={style.formulaireContainer}>
           <div className={style.intro}>
-            <p className={style.surtitre}>CONTACT</p>
+            <p className={style.surtitre}>
+              {t("contact.label")}
+            </p>
 
-            <h2>Parlons de votre projet.</h2>
+            <h2>{t("contact.title")}</h2>
 
             <p className={style.description}>
-              Vous avez un projet photo, vidéo ou graphique ? Décrivez-moi votre
-              besoin et je reviendrai vers vous rapidement.
+              {t("contact.description")}
             </p>
           </div>
 
-          <form className={style.formulaire}>
+          <form
+            className={style.formulaire}
+            onSubmit={handleSubmit}
+          >
+            {/* NOM + PRÉNOM */}
             <div className={style.doubleChamp}>
               <div className={style.champ}>
-                <label htmlFor="nom">Nom</label>
+                <label htmlFor="nom">
+                  {t("contact.lastName")}
+                </label>
+
                 <input
                   type="text"
                   id="nom"
                   name="nom"
-                  placeholder="Votre nom"
+                  placeholder={t("contact.lastNamePlaceholder")}
+                  value={formData.nom}
+                  onChange={handleChange}
                   required
                 />
               </div>
 
               <div className={style.champ}>
-                <label htmlFor="prenom">Prénom</label>
+                <label htmlFor="prenom">
+                  {t("contact.firstName")}
+                </label>
+
                 <input
                   type="text"
                   id="prenom"
                   name="prenom"
-                  placeholder="Votre prénom"
+                  placeholder={t("contact.firstNamePlaceholder")}
+                  value={formData.prenom}
+                  onChange={handleChange}
                   required
                 />
               </div>
             </div>
 
+            {/* EMAIL + ORGANISATION */}
             <div className={style.doubleChamp}>
               <div className={style.champ}>
-                <label htmlFor="email">Adresse mail</label>
+                <label htmlFor="email">
+                  {t("contact.email")}
+                </label>
+
                 <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="exemple@email.com"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
               </div>
 
               <div className={style.champ}>
-                <label htmlFor="organisation">Organisation</label>
+                <label htmlFor="organisation">
+                  {t("contact.organization")}
+                </label>
+
                 <input
                   type="text"
                   id="organisation"
                   name="organisation"
-                  placeholder="Club, entreprise, association..."
+                  placeholder={t("contact.organizationPlaceholder")}
+                  value={formData.organisation}
+                  onChange={handleChange}
                 />
               </div>
             </div>
 
+            {/* TYPE DE PROJET + BUDGET */}
             <div className={style.doubleChamp}>
               <div className={style.champ}>
-                <label htmlFor="projet">Type de projet</label>
+                <label htmlFor="projet">
+                  {t("contact.projectType")}
+                </label>
 
-                <select id="projet" name="projet" defaultValue="" required>
+                <select
+                  id="projet"
+                  name="projet"
+                  value={formData.projet}
+                  onChange={handleChange}
+                  required
+                >
                   <option value="" disabled>
-                    Sélectionnez un type
+                    {t("contact.projectSelect")}
                   </option>
-                  <option value="photo">Photographie</option>
-                  <option value="video">Vidéo</option>
-                  <option value="graphisme">Graphisme</option>
-                  <option value="autre">Autre</option>
+
+                  <option value="Photographie">
+                    {t("contact.projectPhotography")}
+                  </option>
+
+                  <option value="Vidéo">
+                    {t("contact.projectVideo")}
+                  </option>
+
+                  <option value="Graphisme">
+                    {t("contact.projectGraphicDesign")}
+                  </option>
+
+                  <option value="Autre">
+                    {t("contact.projectOther")}
+                  </option>
                 </select>
               </div>
 
               <div className={style.champ}>
-                <label htmlFor="budget">Budget estimé</label>
+                <label htmlFor="budget">
+                  {t("contact.budget")}
+                </label>
 
-                <select id="budget" name="budget" defaultValue="">
-                  <option value="" disabled>
-                    Sélectionnez un budget
-                  </option>
-                  <option value="moins-250">Moins de 250 €</option>
-                  <option value="250-500">250 € - 500 €</option>
-                  <option value="500-1000">500 € - 1 000 €</option>
-                  <option value="1000-plus">Plus de 1 000 €</option>
-                  <option value="a-definir">À définir</option>
-                </select>
+                <input
+                  type="text"
+                  id="budget"
+                  name="budget"
+                  placeholder={t("contact.budgetPlaceholder")}
+                  value={formData.budget}
+                  onChange={handleChange}
+                />
               </div>
             </div>
 
+            {/* DESCRIPTION */}
             <div className={style.champ}>
-              <label htmlFor="message">Description du projet</label>
+              <label htmlFor="message">
+                {t("contact.projectDescription")}
+              </label>
 
               <textarea
                 id="message"
                 name="message"
                 rows="7"
-                placeholder="Parlez-moi de votre projet, de vos idées, de vos attentes..."
+                placeholder={t("contact.messagePlaceholder")}
+                value={formData.message}
+                onChange={handleChange}
                 required
               ></textarea>
             </div>
 
-            <button type="submit" className={style.boutonEnvoyer}>
-              Envoyer ma demande
+            {/* ENVOI */}
+            <button
+              type="submit"
+              className={style.boutonEnvoyer}
+              disabled={envoi}
+            >
+              {envoi
+                ? t("contact.sending")
+                : t("contact.submit")}
             </button>
+
+            {statut && (
+              <p className={style.messageStatut}>
+                {statut}
+              </p>
+            )}
           </form>
         </div>
       </div>

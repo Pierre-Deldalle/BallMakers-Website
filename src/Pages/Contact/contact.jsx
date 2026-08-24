@@ -1,4 +1,4 @@
-import Formulaire from "../../Composants/Formulaire/Formulaire";
+import Formulaire from "../../Composants/Formulaire/formulaire";
 import Footer from "../../Composants/Footer/footer";
 
 const Contact = () => {

@@ -16,6 +16,11 @@ import Partenaire8 from "../../Assets/Logos/partenaires/courtcuts.webp";
 import Partenaire9 from "../../Assets/Logos/partenaires/congo.webp";
 import Partenaire10 from "../../Assets/Logos/partenaires/au_rebond.webp";
 
+import Creation1 from "../../Assets/Accueil/accueil-affiches.webp";
+import Creation2 from "../../Assets/Cartes/Instagram.webp";
+import Creation3 from "../../Assets/Accueil/accueil-photos.webp";
+import Creation4 from "../../Assets/Accueil/accueil-videos.webp";
+
 const SPONSOR_WIDTH = 200;
 
 const Home = () => {
@@ -61,7 +66,6 @@ const Home = () => {
           </button>
         </Link>
 
-        {/* Indication de scroll */}
         <div className={style.scrollArrow}>
           <span></span>
         </div>
@@ -82,6 +86,83 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      {/* Aperçu créations */}
+      <section className={style.portfolioPreview}>
+        <div className={style.portfolioHeader}>
+          <h2>{t("home.portfolioTitle")}</h2>
+
+          <p>
+            {t("home.portfolioDescription")}
+          </p>
+        </div>
+
+        <div className={style.portfolioGrid}>
+          <Link
+            to="/visuelsaffiches"
+            className={style.portfolioCard}
+          >
+            <div className={style.portfolioImage}>
+              <img
+                src={Creation1}
+                alt="Visuels et affiches BallMakers"
+              />
+            </div>
+
+            <h3>{t("home.portfolioPosters")}</h3>
+          </Link>
+
+          <Link
+            to="/reelsinstagram"
+            className={style.portfolioCard}
+          >
+            <div className={style.portfolioImage}>
+              <img
+                src={Creation2}
+                alt="Reels et Shorts BallMakers"
+              />
+            </div>
+
+            <h3>{t("home.portfolioReels")}</h3>
+          </Link>
+
+          <Link
+            to="/photosshooting"
+            className={style.portfolioCard}
+          >
+            <div className={style.portfolioImage}>
+              <img
+                src={Creation3}
+                alt="Photos Shooting BallMakers"
+              />
+            </div>
+
+            <h3>{t("home.portfolioPhotos")}</h3>
+          </Link>
+
+          <Link
+            to="/videosyoutube"
+            className={style.portfolioCard}
+          >
+            <div className={style.portfolioImage}>
+              <img
+                src={Creation4}
+                alt="Vidéos Youtube BallMakers"
+              />
+            </div>
+
+            <h3>{t("home.portfolioYoutube")}</h3>
+          </Link>
+        </div>
+
+        <Link
+          to="/creations"
+          className={style.portfolioButton}
+        >
+          {t("home.portfolioButton")}
+          <span>→</span>
+        </Link>
+      </section>
 
       <Footer />
     </>

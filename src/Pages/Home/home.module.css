@@ -1,6 +1,6 @@
 .home {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -15,10 +15,10 @@
 
     color: #fff;
 
-    top: 0;
-
     margin: 0;
     padding: 0;
+
+    overflow: hidden;
 }
 
 
@@ -27,15 +27,12 @@
 
     position: absolute;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
+    inset: 0;
 
     background-color: rgba(0, 0, 0, 0.4);
 
     backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 
     z-index: 1;
 }
@@ -60,22 +57,32 @@
 
 
 .titreBM {
-    font-family: "PoliceBold", sans-serif;
+    font-family:
+        "PoliceBold",
+        "PoliceBold-fallback",
+        sans-serif;
 
     font-size: 120px;
     font-weight: 700;
 
+    line-height: 1;
+
     margin: 0;
+
+    min-height: 120px;
 }
 
 
 .textes p {
-    font-family: "PoliceBold", sans-serif;
+    font-family:
+        "PoliceBold",
+        "PoliceBold-fallback",
+        sans-serif;
 
     font-size: 25px;
+    line-height: 1.2;
 
-    margin: 0;
-    margin-top: 5px;
+    margin: 5px 0 0;
 
     padding: 10px 25px;
 
@@ -84,7 +91,7 @@
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 
-    border: rgba(185, 185, 185, 0.2) solid 0.5px;
+    border: 0.5px solid rgba(185, 185, 185, 0.2);
     border-radius: 70px;
 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -113,7 +120,11 @@
 
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
@@ -142,6 +153,8 @@
     height: 100%;
 
     object-fit: cover;
+
+    display: block;
 
     z-index: 0;
 }
@@ -252,6 +265,215 @@
 
 
 /* =========================
+   APERÇU CREATIONS
+========================= */
+
+.portfolioPreview {
+    width: 100%;
+    max-width: 1450px;
+
+    margin: 0 auto;
+
+    padding: 100px 60px;
+
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+
+.portfolioHeader {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 50px;
+
+    margin-bottom: 50px;
+}
+
+
+.portfolioHeader h2 {
+    margin: 0;
+
+    font-family:
+        "PoliceBold",
+        "PoliceBold-fallback",
+        sans-serif;
+
+    font-size: 58px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.portfolioHeader p {
+    max-width: 400px;
+
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    color: #aaaaaa;
+}
+
+
+/* =========================
+   GRILLE CREATIONS
+========================= */
+
+.portfolioGrid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 45px 30px;
+}
+
+
+.portfolioCard {
+    text-decoration: none;
+
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.portfolioImage {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background-color: rgba(134, 134, 134, 0.08);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+
+.portfolioImage img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+
+.portfolioCard:hover .portfolioImage img {
+    transform: scale(1.035);
+
+    filter: brightness(0.85);
+}
+
+
+.portfolioCard h3 {
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.portfolioCard:hover h3 {
+    transform: translateX(5px);
+
+    color: #cccccc;
+}
+
+
+/* =========================
+   BOUTON CREATIONS
+========================= */
+
+.portfolioButton {
+    width: 100%;
+
+    margin-top: 45px;
+
+    padding: 18px 25px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    background-color: rgba(134, 134, 134, 0.1);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.portfolioButton span {
+    font-size: 22px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.portfolioButton:hover {
+    background-color: #ffffff;
+
+    color: #000000;
+
+    transform: translateY(-3px);
+}
+
+
+.portfolioButton:hover span {
+    transform: translateX(6px);
+}
+
+
+/* =========================
    FLÈCHE DE SCROLL
 ========================= */
 
@@ -280,8 +502,7 @@
 
     transition:
         background-color 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease;
+        border-color 0.3s ease;
 }
 
 
@@ -297,6 +518,8 @@
     margin-top: -5px;
 
     animation: arrowMove 1.5s ease-in-out infinite;
+
+    will-change: transform, opacity;
 }
 
 
@@ -314,5 +537,126 @@
     100% {
         transform: rotate(45deg) translate(0, 0);
         opacity: 0.4;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .titreBM {
+        font-size: 70px;
+        min-height: 70px;
+    }
+
+
+    .textes p {
+        font-size: 18px;
+    }
+
+
+    .portfolioPreview {
+        padding: 70px 25px;
+    }
+
+
+    .portfolioHeader {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .portfolioHeader h2 {
+        font-size: 42px;
+    }
+
+
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .home {
+        min-height: 100svh;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .titreBM {
+        font-size: clamp(38px, 12vw, 48px);
+        min-height: auto;
+    }
+
+    .textes {
+        width: 100%;
+    }
+
+    .textes p {
+        max-width: 90%;
+        font-size: 15px;
+        padding: 8px 16px;
+        box-sizing: border-box;
+    }
+
+    .boutonCreations {
+        font-size: 16px;
+        padding: 9px 18px;
+    }
+
+    .sponsors {
+        height: 115px;
+    }
+
+    .sponsorItem {
+        width: 150px;
+        padding: 10px 25px;
+    }
+
+    .sponsorItem img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .portfolioPreview {
+        padding: 60px 18px;
+    }
+
+    .portfolioHeader {
+        margin-bottom: 35px;
+    }
+
+    .portfolioHeader h2 {
+        font-size: 34px;
+    }
+
+    .portfolioHeader p {
+        font-size: 15px;
+    }
+
+    .portfolioGrid {
+        gap: 35px;
+    }
+
+    .portfolioCard h3 {
+        font-size: 18px;
+    }
+
+    .portfolioButton {
+        margin-top: 35px;
+        padding: 16px 20px;
+    }
+
+    .scrollArrow {
+        bottom: 20px;
+        width: 40px;
+        height: 40px;
     }
 }
