@@ -5,7 +5,7 @@ import { Suspense, lazy } from "react";
 import ScrollToTop from "./Composants/ScrollToTop/ScrollToTop";
 
 // Pages principales
-const Home = lazy(() => import("./Pages/Home/home"));
+import Home from "./Pages/Home/home";
 const Creations = lazy(() => import("./Pages/Creations/creations"));
 const Contact = lazy(() => import("./Pages/Contact/contact"));
 

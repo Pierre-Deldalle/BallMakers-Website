@@ -17,45 +17,48 @@ import Affiche13 from "../../../Assets/Affiches/Affiche13.webp";
 import CarrouselAuto from "../../../Composants/CarrouselAuto/CarrouselAuto";
 import Lightbox from "../../../Composants/AffichageVisuels/Lightbox";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
-const visuelsaffiches = () => {
+const VisuelsAffiches = () => {
+  const { t } = useTranslation();
+
   const visuelsGrille = [
     {
-      titre: "Alexis Thomas MVP - Berck",
-      date: "24 janvier 2026",
+      titre: t("posters.items.alexisMvp"),
+      date: t("posters.dates.january24"),
       image: Affiche1,
       priorite: true,
     },
     {
-      titre: "Jour de match - Berck vs Saint-Vallier",
-      date: "24 janvier 2026",
+      titre: t("posters.items.matchSaintVallier"),
+      date: t("posters.dates.january24"),
       image: Affiche2,
       fictive: true,
       priorite: true,
     },
     {
-      titre: "Statistiques Globales - Raijon Kelly",
-      date: "24 mai 2026",
+      titre: t("posters.items.raijonStats"),
+      date: t("posters.dates.may24"),
       image: Affiche13,
       fictive: false,
       priorite: true,
     },
     {
-      titre: "Victoire - Berck vs Besançon",
-      date: "janvier 2026",
+      titre: t("posters.items.victoryBesancon"),
+      date: t("posters.dates.january2026"),
       image: Affiche4,
       fictive: true,
       priorite: false,
     },
     {
-      titre: "Jour de match - Berck vs Saint-Vallier",
-      date: "25 octobre 2025",
+      titre: t("posters.items.matchSaintVallier"),
+      date: t("posters.dates.october25"),
       image: Affiche5,
       priorite: false,
     },
     {
-      titre: "Affiche de Derby - Berck vs SOMB",
-      date: "22 novembre 2025",
+      titre: t("posters.items.derby"),
+      date: t("posters.dates.november22"),
       image: Affiche6,
       priorite: false,
     },
@@ -63,20 +66,40 @@ const visuelsaffiches = () => {
 
   const visuelsCarrousel = [
     {
-      titre: "Prochain Match - Berck vs STB",
-      date: "Février 2025",
+      titre: t("posters.items.nextMatchSTB"),
+      date: t("posters.dates.february2025"),
       image: Affiche9,
     },
-    { titre: "Merci Alexis Thomas", date: "Mai 2026", image: Affiche10 },
-    { titre: "Merci à 7 joueurs", date: "Juin 2024", image: Affiche8 },
-    { titre: "Merci Raijon Kelly", date: "Mai 2026", image: Affiche11 },
     {
-      titre: "Jour de Match - Berck vs Levallois",
-      date: "Octobre 2025",
+      titre: t("posters.items.thanksAlexis"),
+      date: t("posters.dates.may2026"),
+      image: Affiche10,
+    },
+    {
+      titre: t("posters.items.thanksSevenPlayers"),
+      date: t("posters.dates.june2024"),
+      image: Affiche8,
+    },
+    {
+      titre: t("posters.items.thanksRaijon"),
+      date: t("posters.dates.may2026"),
+      image: Affiche11,
+    },
+    {
+      titre: t("posters.items.matchLevallois"),
+      date: t("posters.dates.october2025"),
       image: Affiche7,
     },
-    { titre: "Merci Raphaël Pascual", date: "Mai 2026", image: Affiche12 },
-    { titre: "Jour de match - Berck vs Saint-Vallier", date: "24 janvier 2026", image: Affiche3 },
+    {
+      titre: t("posters.items.thanksRaphael"),
+      date: t("posters.dates.may2026"),
+      image: Affiche12,
+    },
+    {
+      titre: t("posters.items.matchSaintVallier"),
+      date: t("posters.dates.january24"),
+      image: Affiche3,
+    },
   ];
 
   const tousLesVisuels = [...visuelsGrille, ...visuelsCarrousel];
@@ -90,23 +113,31 @@ const visuelsaffiches = () => {
     setIndexActif(
       (i) => (i - 1 + tousLesVisuels.length) % tousLesVisuels.length,
     );
-  const suivant = () => setIndexActif((i) => (i + 1) % tousLesVisuels.length);
+
+  const suivant = () =>
+    setIndexActif(
+      (i) => (i + 1) % tousLesVisuels.length,
+    );
 
   const offsetCarrousel = visuelsGrille.length;
 
   return (
     <div className={style.container}>
       <div className={style.alignementTextes}>
-        <h1 className={style.titre}>· Affiches/Visuels</h1>
+        <h1 className={style.titre}>
+          · {t("posters.title")}
+        </h1>
+
         <h4 className={style.sousTitre}>
-          Réalisations d'affiches annonçant des matchs, des départs et mettant en avant
-          des statistiques.
+          {t("posters.description")}
           <br />
+
           <em>
-            Les affiches marquées d'un astérisque rouge sont des créations fictives.
+            {t("posters.fictiveNote")}
           </em>
         </h4>
       </div>
+
       <div className={style.fadeIn}>
         <GalerieVisuels
           visuels={visuelsGrille}
@@ -114,6 +145,7 @@ const visuelsaffiches = () => {
           offsetIndex={0}
         />
       </div>
+
       <CarrouselAuto
         images={visuelsCarrousel}
         offsetIndex={offsetCarrousel}
@@ -135,4 +167,4 @@ const visuelsaffiches = () => {
   );
 };
 
-export default visuelsaffiches;
+export default VisuelsAffiches;

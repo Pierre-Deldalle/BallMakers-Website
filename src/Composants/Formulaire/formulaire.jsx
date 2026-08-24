@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import style from "./Formulaire.module.css";
 import LogoDessin from "../../Assets/Logos/logoDessin.webp";
 
 const Formulaire = () => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -48,7 +51,7 @@ const Formulaire = () => {
         throw new Error(data.message);
       }
 
-      setStatut("Votre demande a bien été envoyée !");
+      setStatut(t("contact.success"));
 
       setFormData({
         nom: "",
@@ -62,9 +65,7 @@ const Formulaire = () => {
     } catch (error) {
       console.error(error);
 
-      setStatut(
-        "Une erreur est survenue pendant l'envoi. Veuillez réessayer."
-      );
+      setStatut(t("contact.error"));
     } finally {
       setEnvoi(false);
     }
@@ -83,13 +84,14 @@ const Formulaire = () => {
 
         <div className={style.formulaireContainer}>
           <div className={style.intro}>
-            <p className={style.surtitre}>CONTACT</p>
+            <p className={style.surtitre}>
+              {t("contact.label")}
+            </p>
 
-            <h2>Parlons de votre projet.</h2>
+            <h2>{t("contact.title")}</h2>
 
             <p className={style.description}>
-              Vous avez un projet photo, vidéo ou graphique ? Décrivez-moi votre
-              besoin et je reviendrai vers vous rapidement.
+              {t("contact.description")}
             </p>
           </div>
 
@@ -97,15 +99,18 @@ const Formulaire = () => {
             className={style.formulaire}
             onSubmit={handleSubmit}
           >
+            {/* NOM + PRÉNOM */}
             <div className={style.doubleChamp}>
               <div className={style.champ}>
-                <label htmlFor="nom">Nom</label>
+                <label htmlFor="nom">
+                  {t("contact.lastName")}
+                </label>
 
                 <input
                   type="text"
                   id="nom"
                   name="nom"
-                  placeholder="Votre nom"
+                  placeholder={t("contact.lastNamePlaceholder")}
                   value={formData.nom}
                   onChange={handleChange}
                   required
@@ -113,13 +118,15 @@ const Formulaire = () => {
               </div>
 
               <div className={style.champ}>
-                <label htmlFor="prenom">Prénom</label>
+                <label htmlFor="prenom">
+                  {t("contact.firstName")}
+                </label>
 
                 <input
                   type="text"
                   id="prenom"
                   name="prenom"
-                  placeholder="Votre prénom"
+                  placeholder={t("contact.firstNamePlaceholder")}
                   value={formData.prenom}
                   onChange={handleChange}
                   required
@@ -127,9 +134,12 @@ const Formulaire = () => {
               </div>
             </div>
 
+            {/* EMAIL + ORGANISATION */}
             <div className={style.doubleChamp}>
               <div className={style.champ}>
-                <label htmlFor="email">Adresse mail</label>
+                <label htmlFor="email">
+                  {t("contact.email")}
+                </label>
 
                 <input
                   type="email"
@@ -144,24 +154,25 @@ const Formulaire = () => {
 
               <div className={style.champ}>
                 <label htmlFor="organisation">
-                  Organisation
+                  {t("contact.organization")}
                 </label>
 
                 <input
                   type="text"
                   id="organisation"
                   name="organisation"
-                  placeholder="Club, entreprise, association..."
+                  placeholder={t("contact.organizationPlaceholder")}
                   value={formData.organisation}
                   onChange={handleChange}
                 />
               </div>
             </div>
 
+            {/* TYPE DE PROJET + BUDGET */}
             <div className={style.doubleChamp}>
               <div className={style.champ}>
                 <label htmlFor="projet">
-                  Type de projet
+                  {t("contact.projectType")}
                 </label>
 
                 <select
@@ -172,87 +183,69 @@ const Formulaire = () => {
                   required
                 >
                   <option value="" disabled>
-                    Sélectionnez un type
+                    {t("contact.projectSelect")}
                   </option>
 
                   <option value="Photographie">
-                    Photographie
+                    {t("contact.projectPhotography")}
                   </option>
 
                   <option value="Vidéo">
-                    Vidéo
+                    {t("contact.projectVideo")}
                   </option>
 
                   <option value="Graphisme">
-                    Graphisme
+                    {t("contact.projectGraphicDesign")}
                   </option>
 
                   <option value="Autre">
-                    Autre
+                    {t("contact.projectOther")}
                   </option>
                 </select>
               </div>
 
               <div className={style.champ}>
                 <label htmlFor="budget">
-                  Budget estimé
+                  {t("contact.budget")}
                 </label>
 
-                <select
+                <input
+                  type="text"
                   id="budget"
                   name="budget"
+                  placeholder={t("contact.budgetPlaceholder")}
                   value={formData.budget}
                   onChange={handleChange}
-                >
-                  <option value="" disabled>
-                    Sélectionnez un budget
-                  </option>
-
-                  <option value="Moins de 250 €">
-                    Moins de 250 €
-                  </option>
-
-                  <option value="250 € - 500 €">
-                    250 € - 500 €
-                  </option>
-
-                  <option value="500 € - 1 000 €">
-                    500 € - 1 000 €
-                  </option>
-
-                  <option value="Plus de 1 000 €">
-                    Plus de 1 000 €
-                  </option>
-
-                  <option value="À définir">
-                    À définir
-                  </option>
-                </select>
+                />
               </div>
             </div>
 
+            {/* DESCRIPTION */}
             <div className={style.champ}>
               <label htmlFor="message">
-                Description du projet
+                {t("contact.projectDescription")}
               </label>
 
               <textarea
                 id="message"
                 name="message"
                 rows="7"
-                placeholder="Parlez-moi de votre projet, de vos idées, de vos attentes..."
+                placeholder={t("contact.messagePlaceholder")}
                 value={formData.message}
                 onChange={handleChange}
                 required
               ></textarea>
             </div>
 
+            {/* ENVOI */}
             <button
               type="submit"
               className={style.boutonEnvoyer}
               disabled={envoi}
             >
-              {envoi ? "Envoi en cours..." : "Envoyer ma demande"}
+              {envoi
+                ? t("contact.sending")
+                : t("contact.submit")}
             </button>
 
             {statut && (

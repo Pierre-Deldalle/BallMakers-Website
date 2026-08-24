@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import CartePortfolio from "../../Composants/CartePortfolio/CartePortfolio";
 import style from "./creations.module.css";
 
@@ -11,52 +12,63 @@ import Highlights from "../../Assets/Cartes/Highlights.webp";
 import Footer from "../../Composants/Footer/footer";
 
 const Creations = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className={style.container}>
         <div className={style.blob1} />
         <div className={style.blob2} />
-        <h1 className={style.titre}>· Mon Portfolio</h1>
+
+        <h1 className={style.titre}>
+          · {t("creations.title")}
+        </h1>
 
         <div className={style.grid}>
           <CartePortfolio
             link="/visuelsaffiches"
             image={Affiche}
-            titre="Visuels/Affiches"
-            date="2023 - maintenant"
+            titre={t("creations.posters")}
+            date={t("creations.since2023")}
           />
+
           <CartePortfolio
             link="/reelsinstagram"
             image={Instagram}
-            titre="Reels Instagram"
-            date="2023 - maintenant"
+            titre={t("creations.reels")}
+            date={t("creations.since2023")}
           />
+
           <CartePortfolio
             link="/highlightsjoueurs"
             image={Highlights}
-            titre="Highlights Joueurs"
-            date="2024 - maintenant"
+            titre={t("creations.highlights")}
+            date={t("creations.since2024")}
           />
+
           <CartePortfolio
             link="/photosshooting"
             image={Shooting}
-            titre="Photos Shooting"
-            date="2025 - maintenant"
+            titre={t("creations.photos")}
+            date={t("creations.since2025")}
           />
+
           <CartePortfolio
             link="/trailers"
             image={Trailer}
-            titre="Trailers"
+            titre={t("creations.trailers")}
             date=""
           />
+
           <CartePortfolio
             link="/videosyoutube"
             image={Youtube}
-            titre="Vidéos Youtube"
-            date="2023 - maintenant"
+            titre={t("creations.youtube")}
+            date={t("creations.since2023")}
           />
         </div>
       </div>
+
       <Footer />
     </>
   );

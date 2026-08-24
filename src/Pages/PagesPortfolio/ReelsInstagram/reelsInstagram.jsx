@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Footer from "../../../Composants/Footer/footer";
 import style from "./reelsinstagram.module.css";
 
@@ -13,6 +14,8 @@ const getYoutubeId = (url) => {
 };
 
 const ReelsInstagram = () => {
+  const { t } = useTranslation();
+
   const videos = [
     {
       url: "https://youtube.com/shorts/qAwZ3L0puX8?feature=share",
@@ -87,7 +90,7 @@ const ReelsInstagram = () => {
             style={{
               backgroundImage: `url(${miniature})`,
             }}
-            aria-label={`Lire ${video.titre}`}
+            aria-label={`${t("reels.play")} ${video.titre}`}
           >
             <div className={style.overlay}></div>
 
@@ -102,9 +105,13 @@ const ReelsInstagram = () => {
 
   return (
     <div className={style.container}>
-      <h1 className={style.titre}>· Reels / Shorts</h1>
+      <h1 className={style.titre}>
+        · {t("reels.title")}
+      </h1>
 
-      <p className={style.sousTitre}>À remplir plus tard</p>
+      <p className={style.sousTitre}>
+        {t("reels.description")}
+      </p>
 
       <main className={style.contenu}>
         {/* 3 vidéos verticales */}
@@ -132,18 +139,20 @@ const ReelsInstagram = () => {
         </section>
 
         <section className={style.statsBloc}>
-        <p className={style.statsLabel}>PORTÉE DES VIDÉOS</p>
+          <p className={style.statsLabel}>
+            {t("reels.statsLabel")}
+          </p>
 
-        <h2>
-          +395 K de vues
-          <span> durant la saison 2024–25</span>
-        </h2>
+          <h2>
+            {t("reels.stats2024")}
+            <span> {t("reels.stats2024Detail")}</span>
+          </h2>
 
-        <h2>
-          +1.2 M de vues
-          <span> durant la saison 2025–26</span>
-        </h2>
-      </section>
+          <h2>
+            {t("reels.stats2025")}
+            <span> {t("reels.stats2025Detail")}</span>
+          </h2>
+        </section>
       </main>
 
       <Footer />

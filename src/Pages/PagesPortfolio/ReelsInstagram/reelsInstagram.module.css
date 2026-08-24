@@ -36,6 +36,10 @@
 }
 
 
+/* =========================
+   TITRES
+========================= */
+
 .titre {
     font-size: 32px;
     font-weight: 700;
@@ -59,6 +63,7 @@
 
     margin-left: 60px;
     margin-top: 10px;
+    margin-right: 60px;
 
     color: #aaaaaa;
 
@@ -71,11 +76,15 @@
 }
 
 
+/* =========================
+   CONTENU
+========================= */
+
 .contenu {
     width: calc(100% - 120px);
     max-width: 1250px;
 
-    margin: 60px auto 100px auto;
+    margin: 60px auto 100px;
 
     display: flex;
     flex-direction: column;
@@ -86,10 +95,15 @@
     z-index: 2;
 }
 
+
+/* =========================
+   STATS
+========================= */
+
 .statsBloc {
     width: 100%;
 
-    margin: 15px auto 20px auto;
+    margin: 15px auto 20px;
     padding: 45px 30px;
 
     box-sizing: border-box;
@@ -172,6 +186,7 @@
     font-size: 42px;
 }
 
+
 /* =========================
    CARTES VIDEO
 ========================= */
@@ -191,6 +206,8 @@
     -webkit-backdrop-filter: blur(15px);
 
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    width: 100%;
 }
 
 
@@ -318,11 +335,11 @@
 .troisVideos {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     gap: 30px;
 
-    width: 85%;
+    width: 100%;
 
     margin: 0 auto;
 }
@@ -346,5 +363,216 @@
         opacity: 1;
 
         transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .titre {
+        margin-top: 130px;
+        margin-left: 30px;
+        margin-right: 30px;
+
+        font-size: 30px;
+    }
+
+
+    .sousTitre {
+        margin-left: 30px;
+        margin-right: 30px;
+
+        font-size: 17px;
+    }
+
+
+    .contenu {
+        width: calc(100% - 60px);
+
+        margin-top: 45px;
+
+        gap: 35px;
+    }
+
+
+    .troisVideos {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+
+    .statsBloc h2 {
+        font-size: 30px;
+    }
+
+
+    .statsBloc h2:nth-of-type(2) {
+        font-size: 36px;
+    }
+
+
+    .statsBloc h2 span {
+        font-size: 19px;
+    }
+}
+
+
+/* =========================
+   TELEPHONE
+========================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        overflow-x: hidden;
+    }
+
+
+    .titre {
+        margin-top: 115px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        font-size: 27px;
+
+        line-height: 1.15;
+    }
+
+
+    .sousTitre {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 12px;
+
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+
+    .contenu {
+        width: calc(100% - 36px);
+
+        margin: 35px auto 70px;
+
+        gap: 30px;
+    }
+
+
+    .troisVideos {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        gap: 25px;
+    }
+
+
+    .videoVerticale {
+        width: min(100%, 340px);
+
+        margin: 0 auto;
+    }
+
+
+    .videoHorizontale {
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+
+    .videoCard {
+        border-radius: 16px;
+    }
+
+
+    .playButton {
+        width: 64px;
+        height: 46px;
+
+        border-radius: 12px;
+    }
+
+
+    .playTriangle {
+        border-top-width: 8px;
+        border-bottom-width: 8px;
+        border-left-width: 13px;
+    }
+
+
+    .statsBloc {
+        padding: 35px 18px;
+
+        border-radius: 20px;
+    }
+
+
+    .statsLabel {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .statsBloc h2 {
+        font-size: 25px;
+    }
+
+
+    .statsBloc h2:nth-of-type(2) {
+        font-size: 30px;
+    }
+
+
+    .statsBloc h2 span {
+        display: block;
+
+        margin-top: 4px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* =========================
+   PETITS TELEPHONES
+========================= */
+
+@media (max-width: 400px) {
+
+    .titre {
+        font-size: 24px;
+    }
+
+
+    .sousTitre {
+        font-size: 14px;
+    }
+
+
+    .contenu {
+        width: calc(100% - 28px);
+    }
+
+
+    .videoVerticale {
+        width: min(100%, 300px);
+    }
+
+
+    .statsBloc h2 {
+        font-size: 22px;
+    }
+
+
+    .statsBloc h2:nth-of-type(2) {
+        font-size: 27px;
     }
 }

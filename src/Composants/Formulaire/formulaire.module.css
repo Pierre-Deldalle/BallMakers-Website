@@ -264,8 +264,42 @@
     transform: translateY(3px);
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+
+    .formulaireSection {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+
+
+    .contactLayout {
+        grid-template-columns: 0.65fr 1.35fr;
+
+        gap: 40px;
+    }
+
+
+    .formulaireContainer {
+        padding: 35px;
+    }
+
+
+    .intro h2 {
+        font-size: 36px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .formulaireSection {
+        padding: 140px 30px 70px 30px;
+    }
+
 
     .contactLayout {
         grid-template-columns: 1fr;
@@ -274,57 +308,202 @@
     }
 
 
+    /* Le logo passe au-dessus du formulaire */
     .imageContainer {
-        height: 300px;
+        height: 220px;
+
+        overflow: visible;
     }
 
 
     .logoDessin {
-        max-height: 300px;
-    }
-}
+        width: auto;
+        height: 100%;
 
+        max-width: 100%;
+        max-height: 220px;
 
-@media (max-width: 800px) {
-
-    .formulaireSection {
-        padding: 140px 20px 50px 20px;
+        object-fit: contain;
     }
 
 
     .formulaireContainer {
-        padding: 30px 20px;
+        padding: 35px 30px;
+
+        border-radius: 28px;
+    }
+
+
+    .intro {
+        margin-bottom: 30px;
+    }
+
+
+    .intro h2 {
+        font-size: 34px;
+    }
+
+
+    .description {
+        font-size: 15px;
+    }
+
+
+    .formulaire {
+        gap: 20px;
     }
 
 
     .doubleChamp {
         grid-template-columns: 1fr;
-    }
 
-
-    .intro h2 {
-        font-size: 32px;
+        gap: 20px;
     }
 
 
     .boutonEnvoyer {
         width: 100%;
+
+        align-self: stretch;
     }
 }
 
-.messageStatut {
-    margin: 0;
 
-    font-size: 14px;
+@media (max-width: 600px) {
 
-    color: #cccccc;
+    .formulaireSection {
+        padding: 115px 16px 50px 16px;
+    }
+
+
+    .contactLayout {
+        gap: 20px;
+    }
+
+
+    /* Logo plus discret sur téléphone */
+    .imageContainer {
+        height: 150px;
+    }
+
+
+    .logoDessin {
+        max-height: 150px;
+    }
+
+
+    .formulaireContainer {
+        padding: 26px 18px;
+
+        border-radius: 22px;
+    }
+
+
+    .intro {
+        margin-bottom: 25px;
+    }
+
+
+    .surtitre {
+        font-size: 11px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .intro h2 {
+        font-size: 28px;
+
+        line-height: 1.15;
+
+        margin-bottom: 12px;
+    }
+
+
+    .description {
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+
+    .formulaire {
+        gap: 18px;
+    }
+
+
+    .doubleChamp {
+        gap: 18px;
+    }
+
+
+    .champ {
+        gap: 7px;
+    }
+
+
+    .champ label {
+        font-size: 13px;
+    }
+
+
+    .champ input,
+    .champ select,
+    .champ textarea {
+        padding: 13px 14px;
+
+        font-size: 16px;
+
+        border-radius: 12px;
+    }
+
+
+    .champ textarea {
+        min-height: 140px;
+    }
+
+
+    .boutonEnvoyer {
+        width: 100%;
+
+        padding: 14px 20px;
+
+        font-size: 15px;
+    }
+
+
+    .messageStatut {
+        font-size: 13px;
+
+        text-align: center;
+    }
 }
 
 
-.boutonEnvoyer:disabled {
-    opacity: 0.5;
+@media (max-width: 400px) {
 
-    cursor: not-allowed;
+    .formulaireSection {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 
-    transform: none;
+
+    .imageContainer {
+        height: 125px;
+    }
+
+
+    .logoDessin {
+        max-height: 125px;
+    }
+
+
+    .formulaireContainer {
+        padding: 22px 15px;
+    }
+
+
+    .intro h2 {
+        font-size: 25px;
+    }
 }

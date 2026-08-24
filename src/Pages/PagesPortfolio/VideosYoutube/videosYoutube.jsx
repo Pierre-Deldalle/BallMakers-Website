@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Footer from "../../../Composants/Footer/footer";
 import style from "./videosYoutube.module.css";
 
@@ -13,6 +14,8 @@ const getYoutubeId = (url) => {
 };
 
 const VideosYoutube = () => {
+  const { t } = useTranslation();
+
   const videos = [
     {
       url: "https://www.youtube.com/watch?v=y6YCmQRfq20",
@@ -62,7 +65,7 @@ const VideosYoutube = () => {
             style={{
               backgroundImage: `url(${miniature})`,
             }}
-            aria-label={`Lire ${video.titre}`}
+            aria-label={`${t("youtube.play")} ${video.titre}`}
           >
             <div className={style.overlay}></div>
 
@@ -77,10 +80,12 @@ const VideosYoutube = () => {
 
   return (
     <div className={style.container}>
-      <h1 className={style.titre}>· Vidéos Youtube</h1>
+      <h1 className={style.titre}>
+        · {t("youtube.title")}
+      </h1>
 
       <p className={style.sousTitre}>
-        Réalisation de vidéos YouTube autour de différents concepts, comme les Day in the Life ou les Mic’d Up, ainsi que de vidéos de remerciement pour marquer la fin de carrière d’un joueur.
+        {t("youtube.description")}
       </p>
 
       <main className={style.contenu}>

@@ -259,34 +259,118 @@
         transform: translateY(0);
     }
 }
-
-
 /* =========================
    RESPONSIVE
 ========================= */
 
 @media (max-width: 900px) {
 
-    .titre,
+    .titre {
+        margin-top: 130px;
+        margin-left: 25px;
+        margin-right: 25px;
+
+        font-size: 30px;
+    }
+
+
     .sousTitre {
         margin-left: 25px;
         margin-right: 25px;
+
+        font-size: 16px;
     }
 
 
     .contenu {
         width: calc(100% - 50px);
+
+        margin-top: 45px;
+        margin-bottom: 80px;
+
+        gap: 30px;
     }
 
 
     .deuxVideos,
     .quatreVideos {
         grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .videoCard {
+        border-radius: 15px;
     }
 
 
     .playButton {
         width: 65px;
         height: 45px;
+
+        border-radius: 12px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .titre {
+        margin-top: 115px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        font-size: 26px;
+    }
+
+
+    .sousTitre {
+        margin-left: 20px;
+        margin-right: 20px;
+
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+
+    .contenu {
+        width: calc(100% - 36px);
+
+        margin-top: 35px;
+        margin-bottom: 70px;
+
+        gap: 22px;
+    }
+
+
+    .deuxVideos,
+    .quatreVideos {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    .videoCard {
+        width: 100%;
+
+        border-radius: 12px;
+    }
+
+
+    .playButton {
+        width: 58px;
+        height: 40px;
+
+        border-radius: 10px;
+    }
+
+
+    .playTriangle {
+        border-top-width: 7px;
+        border-bottom-width: 7px;
+        border-left-width: 12px;
     }
 }

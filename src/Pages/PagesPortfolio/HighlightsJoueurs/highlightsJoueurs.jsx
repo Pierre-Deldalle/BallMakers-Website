@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Footer from "../../../Composants/Footer/footer";
 import style from "./highlightsJoueurs.module.css";
 
@@ -13,6 +14,8 @@ const getYoutubeId = (url) => {
 };
 
 const HighlightsJoueurs = () => {
+  const { t } = useTranslation();
+
   const videos = [
     {
       url: "https://www.youtube.com/watch?v=NZhaMrLV-0U&t",
@@ -74,7 +77,7 @@ const HighlightsJoueurs = () => {
             style={{
               backgroundImage: `url(${miniature})`,
             }}
-            aria-label={`Lire ${video.titre}`}
+            aria-label={`${t("highlights.play")} ${video.titre}`}
           >
             <div className={style.overlay}></div>
 
@@ -89,10 +92,12 @@ const HighlightsJoueurs = () => {
 
   return (
     <div className={style.container}>
-      <h1 className={style.titre}>· Highlights Joueurs</h1>
+      <h1 className={style.titre}>
+        · {t("highlights.title")}
+      </h1>
 
       <p className={style.sousTitre}>
-        Réalisation de vidéos Highlights pour mettre en avant les performances des joueurs, que ce soit pour trouver un nouveau club ou simplement faire le bilan de leur saison.
+        {t("highlights.description")}
       </p>
 
       <main className={style.contenu}>

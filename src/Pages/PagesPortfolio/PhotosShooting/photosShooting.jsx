@@ -2,6 +2,7 @@ import Footer from "../../../Composants/Footer/footer";
 import Lightbox from "../../../Composants/AffichageVisuels/Lightbox";
 import style from "./photosshooting.module.css";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import Shooting1 from "../../../Assets/Shooting/Shooting1.webp";
 import Shooting2 from "../../../Assets/Shooting/Shooting2.webp";
@@ -22,6 +23,8 @@ import ShootingVideo1 from "../../../Assets/Shooting/ShootingVideo1.mp4";
 import ShootingVideo2 from "../../../Assets/Shooting/ShootingVideo2.mp4";
 
 const PhotosShooting = () => {
+  const { t } = useTranslation();
+
   const photos = [
     {
       titre: "",
@@ -119,10 +122,12 @@ const PhotosShooting = () => {
 
   return (
     <div className={style.container}>
-      <h1 className={style.titre}>· Photos Shooting</h1>
+      <h1 className={style.titre}>
+        · {t("shooting.title")}
+      </h1>
 
       <p className={style.sousTitre}>
-        Réalisation de photos lors des shootings d’avant-match.
+        {t("shooting.description")}
       </p>
 
       <main className={style.contenu}>
@@ -132,7 +137,6 @@ const PhotosShooting = () => {
         ========================= */}
 
         <section className={style.galerieEditoriale}>
-
           <div className={`${style.duo} ${style.grandeGauche}`}>
             <button
               className={`${style.photoEditoriale} ${style.photoGrande}`}
@@ -180,7 +184,6 @@ const PhotosShooting = () => {
               <img src={Shooting6} alt="" />
             </button>
           </div>
-
         </section>
 
         {/* =========================
@@ -233,27 +236,26 @@ const PhotosShooting = () => {
         ========================= */}
 
         <section className={style.videosShooting}>
-        <video
-          className={style.videoShooting}
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={ShootingVideo1} type="video/mp4" />
-        </video>
+          <video
+            className={style.videoShooting}
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={ShootingVideo1} type="video/mp4" />
+          </video>
 
-        <video
-          className={style.videoShooting}
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={ShootingVideo2} type="video/mp4" />
-        </video>
-      </section>
-
+          <video
+            className={style.videoShooting}
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={ShootingVideo2} type="video/mp4" />
+          </video>
+        </section>
       </main>
 
       {indexActif !== null && (
