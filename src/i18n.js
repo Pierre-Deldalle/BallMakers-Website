@@ -48,7 +48,7 @@ const resources = {
           "Réalisations d'affiches annonçant des matchs, des départs et mettant en avant des statistiques.",
 
         fictiveNote:
-          "Les affiches marquées d'un astérisque rouge sont des créations fictives.",
+          "Les affiches marquées d'une étoile rouge sont des créations fictives.",
 
         items: {
           alexisMvp:
@@ -135,7 +135,7 @@ const resources = {
         title: "Reels / Shorts",
 
         description:
-          "À remplir plus tard",
+          "Réalisation de vidéos en format vertical pour mettre en avant les performances et actions des joueurs et alimenter les réseaux des équipes.",
 
         play: "Lire",
 
@@ -243,7 +243,7 @@ const resources = {
           "Budget estimé",
 
         budgetPlaceholder:
-          "Ex : 500 €, à définir...",
+          "A définir...",
 
         projectDescription:
           "Description du projet",
@@ -374,7 +374,7 @@ const resources = {
           "Creation of posters announcing games, departures and highlighting player statistics.",
 
         fictiveNote:
-          "Posters marked with a red asterisk are fictional creations.",
+          "Posters marked with a red star are fictional creations.",
 
         items: {
           alexisMvp:
@@ -465,7 +465,7 @@ const resources = {
           "Reels / Shorts",
 
         description:
-          "To be completed later",
+          "Producing vertical-format videos to showcase players' performances and actions and populate team social media channels.",
 
         play:
           "Play",
@@ -576,7 +576,7 @@ const resources = {
           "Estimated budget",
 
         budgetPlaceholder:
-          "E.g. €500, to be determined...",
+          "To be determined...",
 
         projectDescription:
           "Project description",

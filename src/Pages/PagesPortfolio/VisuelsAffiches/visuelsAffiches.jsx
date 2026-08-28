@@ -95,11 +95,6 @@ const VisuelsAffiches = () => {
       date: t("posters.dates.may2026"),
       image: Affiche12,
     },
-    {
-      titre: t("posters.items.matchSaintVallier"),
-      date: t("posters.dates.january24"),
-      image: Affiche3,
-    },
   ];
 
   const tousLesVisuels = [...visuelsGrille, ...visuelsCarrousel];

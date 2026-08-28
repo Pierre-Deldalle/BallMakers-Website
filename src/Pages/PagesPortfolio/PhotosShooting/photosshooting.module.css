@@ -1,18 +1,13 @@
 .container {
     width: 100%;
     min-height: 100vh;
-
     position: relative;
-
     box-sizing: border-box;
-
     overflow: hidden;
 }
 
-
 .container::before {
     content: "";
-
     position: absolute;
     inset: 0;
 
@@ -29,9 +24,7 @@
         );
 
     background-size: 100% 100%, 6px 6px;
-
     pointer-events: none;
-
     z-index: 0;
 }
 
@@ -55,7 +48,6 @@
 
     line-height: 1.2;
 }
-
 
 .sousTitre {
     font-size: 18px;
@@ -89,7 +81,7 @@
     display: flex;
     flex-direction: column;
 
-    gap: 100px;
+    gap: 85px;
 
     position: relative;
     z-index: 2;
@@ -102,13 +94,15 @@
 
 .galerieEditoriale {
     width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
 
     display: flex;
     flex-direction: column;
 
-    gap: 100px;
+    gap: 80px;
 }
-
 
 .duo {
     width: 100%;
@@ -117,11 +111,11 @@
 
     grid-template-columns: 1.15fr 0.85fr;
 
-    gap: 45px;
+    /* Réduit l'espace entre les deux photos */
+    gap: 22px;
 
     align-items: center;
 }
-
 
 .grandeDroite {
     grid-template-columns: 0.85fr 1.15fr;
@@ -148,16 +142,13 @@
     position: relative;
 }
 
-
 .photoGrande {
     height: 700px;
 }
 
-
 .photoPetite {
     height: 590px;
 }
-
 
 .photoEditoriale img {
     width: 100%;
@@ -172,10 +163,8 @@
         filter 0.5s ease;
 }
 
-
 .photoEditoriale:hover img {
     transform: scale(1.025);
-
     filter: brightness(0.85);
 }
 
@@ -186,16 +175,19 @@
 
 .deuxPhotos {
     width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
 
     display: grid;
 
     grid-template-columns: 0.75fr 1.25fr;
 
-    gap: 30px;
+    /* Réduit l'espace horizontal */
+    gap: 20px;
 
     align-items: center;
 }
-
 
 .photoDouble {
     width: 100%;
@@ -212,16 +204,13 @@
     cursor: pointer;
 }
 
-
 .photoDouble:first-child {
     height: 500px;
 }
 
-
 .photoDouble:last-child {
     height: 650px;
 }
-
 
 .photoDouble img {
     width: 100%;
@@ -236,10 +225,8 @@
         filter 0.4s ease;
 }
 
-
 .photoDouble:hover img {
     transform: scale(1.03);
-
     filter: brightness(0.85);
 }
 
@@ -250,14 +237,18 @@
 
 .grillePhotos {
     width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
 
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 25px;
+    /* Moins d'espace entre les colonnes */
+    column-gap: 18px;
+    row-gap: 22px;
 }
-
 
 .photoGrille {
     width: 100%;
@@ -276,7 +267,6 @@
     cursor: pointer;
 }
 
-
 .photoGrille img {
     width: 100%;
     height: 100%;
@@ -290,10 +280,8 @@
         filter 0.4s ease;
 }
 
-
 .photoGrille:hover img {
     transform: scale(1.04);
-
     filter: brightness(0.82);
 }
 
@@ -304,16 +292,17 @@
 
 .videosShooting {
     width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
 
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 30px;
-
-    margin: 0 auto;
+    /* Même logique que les photos */
+    gap: 20px;
 }
-
 
 .videoShooting {
     width: 100%;
@@ -348,11 +337,9 @@
     animation: apparition 0.8s ease forwards;
 }
 
-
 @keyframes apparition {
     to {
         opacity: 1;
-
         transform: translateY(0);
     }
 }
@@ -372,14 +359,12 @@
         font-size: 30px;
     }
 
-
     .sousTitre {
         margin-left: 25px;
         margin-right: 25px;
 
         font-size: 16px;
     }
-
 
     .contenu {
         width: calc(100% - 50px);
@@ -389,11 +374,9 @@
         gap: 60px;
     }
 
-
     .galerieEditoriale {
         gap: 45px;
     }
-
 
     .duo,
     .grandeDroite {
@@ -401,7 +384,6 @@
 
         gap: 25px;
     }
-
 
     .photoGrande,
     .photoPetite {
@@ -412,13 +394,11 @@
         aspect-ratio: 4 / 5;
     }
 
-
     .deuxPhotos {
         grid-template-columns: 1fr;
 
         gap: 25px;
     }
-
 
     .photoDouble:first-child,
     .photoDouble:last-child {
@@ -427,13 +407,12 @@
         aspect-ratio: 4 / 5;
     }
 
-
     .grillePhotos {
         grid-template-columns: repeat(2, 1fr);
 
-        gap: 20px;
+        column-gap: 15px;
+        row-gap: 20px;
     }
-
 
     .videosShooting {
         grid-template-columns: 1fr;
@@ -461,7 +440,6 @@
         line-height: 1.15;
     }
 
-
     .sousTitre {
         margin-left: 20px;
         margin-right: 20px;
@@ -472,7 +450,6 @@
         line-height: 1.5;
     }
 
-
     .contenu {
         width: calc(100% - 36px);
 
@@ -481,24 +458,20 @@
         gap: 40px;
     }
 
-
     .galerieEditoriale {
         gap: 25px;
     }
 
-
     .duo,
     .grandeDroite {
-        gap: 20px;
+        gap: 18px;
     }
-
 
     .photoEditoriale,
     .photoDouble,
     .photoGrille {
         border-radius: 10px;
     }
-
 
     .photoGrande,
     .photoPetite,
@@ -511,27 +484,23 @@
         aspect-ratio: 4 / 5;
     }
 
-
     .grillePhotos {
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        gap: 18px;
     }
-
 
     .photoGrille {
         aspect-ratio: 4 / 5;
     }
-
 
     .videosShooting {
         grid-template-columns: 1fr;
 
         width: 100%;
 
-        gap: 20px;
+        gap: 18px;
     }
-
 
     .videoShooting {
         width: 100%;
@@ -553,11 +522,9 @@
         font-size: 23px;
     }
 
-
     .sousTitre {
         font-size: 14px;
     }
-
 
     .contenu {
         width: calc(100% - 28px);
