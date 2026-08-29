@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import style from "./Formulaire.module.css";
+import style from "./formulaire.module.css";
 import LogoDessin from "../../Assets/Logos/logoDessin.webp";
 
 const Formulaire = () => {
