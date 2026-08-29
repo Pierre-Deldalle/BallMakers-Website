@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Footer from "../../../Composants/Footer/footer";
-import style from "./reelsinstagram.module.css";
+import style from "./reelsInstagram.module.css";
 
 const getYoutubeId = (url) => {
   if (!url) return null;
