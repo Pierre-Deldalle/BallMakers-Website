@@ -16,6 +16,8 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://ballmakers.netlify.app",
+      "https://ballmakers.fr",
+      "https://www.ballmakers.fr",
     ],
   })
 );
