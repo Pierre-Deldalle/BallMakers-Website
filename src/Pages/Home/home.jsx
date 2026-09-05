@@ -56,7 +56,13 @@ const Home = () => {
         </video>
 
         <div className={style.textes}>
-          <h1 className={style.titreBM}>BALLMAKERS</h1>
+          <h1
+            className={`${style.titreBM} notranslate`}
+            translate="no"
+          >
+            BALLMAKERS
+          </h1>
+
           <p>{t("home.subtitle")}</p>
         </div>
 

@@ -16,7 +16,12 @@ const Footer = () => {
 
       <div className={style.container}>
         <div className={style.section}>
-          <h3 className={style.logo}>BallMakers</h3>
+          <h3
+            className={`${style.logo} notranslate`}
+            translate="no"
+          >
+            BallMakers
+          </h3>
 
           <p>{t("footer.description")}</p>
         </div>
@@ -43,22 +48,22 @@ const Footer = () => {
           <p>Email : ballmakers92@icloud.com</p>
 
           <div className={style.languages}>
-          <button
-            onClick={() => i18n.changeLanguage("fr")}
-            className={i18n.language === "fr" ? style.activeLanguage : ""}
-            aria-label="Français"
-          >
-          <img src={FranceFlag} alt="Français" />
-          </button>
+            <button
+              onClick={() => i18n.changeLanguage("fr")}
+              className={i18n.language === "fr" ? style.activeLanguage : ""}
+              aria-label="Français"
+            >
+              <img src={FranceFlag} alt="Français" />
+            </button>
 
-          <button
-            onClick={() => i18n.changeLanguage("en")}
-            className={i18n.language === "en" ? style.activeLanguage : ""}
-            aria-label="English"
-          >
-            <img src={UsaFlag} alt="English" />
-          </button>
-        </div>
+            <button
+              onClick={() => i18n.changeLanguage("en")}
+              className={i18n.language === "en" ? style.activeLanguage : ""}
+              aria-label="English"
+            >
+              <img src={UsaFlag} alt="English" />
+            </button>
+          </div>
         </div>
 
         <div className={style.section}>
@@ -93,7 +98,11 @@ const Footer = () => {
       </div>
 
       <div className={style.bottom}>
-        © {new Date().getFullYear()} BallMakers — {t("footer.rights")} -{" "}
+        © {new Date().getFullYear()}{" "}
+        <span translate="no" className="notranslate">
+          BallMakers
+        </span>{" "}
+        — {t("footer.rights")} -{" "}
         {t("footer.developedBy")}{" "}
         <a
           href="https://www.linkedin.com/in/pierre-deldalle/"
