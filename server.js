@@ -63,7 +63,7 @@ app.post("/api/contact", async (req, res) => {
 
     // Envoi de l'email
     const { data, error } = await resend.emails.send({
-      from: "BallMakers <onboarding@resend.dev>",
+      from: "BallMakers <contact@ballmakers.fr>",
 
       to: ["ballmakers92@icloud.com"],
 
