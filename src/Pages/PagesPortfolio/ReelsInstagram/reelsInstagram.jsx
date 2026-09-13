@@ -48,7 +48,7 @@ const ReelsInstagram = () => {
       vertical: true,
     },
     {
-      url: "https://www.youtube.com/shorts/4mRuOr9w248?feature=share",
+      url: "https://www.youtube.com/shorts/rCcikNCWz3s?feature=share",
       titre: "Vidéo 7",
       vertical: true,
     },
