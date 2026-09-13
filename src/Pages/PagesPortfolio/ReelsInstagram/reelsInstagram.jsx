@@ -18,17 +18,17 @@ const ReelsInstagram = () => {
 
   const videos = [
     {
-      url: "https://youtube.com/shorts/qAwZ3L0puX8?feature=share",
+      url: "https://www.youtube.com/shorts/DwtiH55JaLg?feature=share",
       titre: "Vidéo 1",
       vertical: true,
     },
     {
-      url: "https://youtube.com/shorts/nl4B9AV_oAI?feature=share",
+      url: "https://www.youtube.com/shorts/yC8UnNXNePs?feature=share",
       titre: "Vidéo 2",
       vertical: true,
     },
     {
-      url: "https://youtube.com/shorts/b2qucnal0T0?feature=share",
+      url: "https://www.youtube.com/shorts/xSDW1-ScsMI?feature=share",
       titre: "Vidéo 3",
       vertical: true,
     },
@@ -38,17 +38,17 @@ const ReelsInstagram = () => {
       vertical: false,
     },
     {
-      url: "https://youtube.com/shorts/3cVTqEU_K-4?feature=share",
+      url: "https://www.youtube.com/shorts/-W-oay_CzWk?feature=share",
       titre: "Vidéo 5",
       vertical: true,
     },
     {
-      url: "https://youtube.com/shorts/1byHE-ENHQc?feature=share",
+      url: "https://www.youtube.com/shorts/zO8DOeIG9UM?feature=share",
       titre: "Vidéo 6",
       vertical: true,
     },
     {
-      url: "https://youtube.com/shorts/OIg7Jz_Ypts?feature=share",
+      url: "https://www.youtube.com/shorts/4mRuOr9w248?feature=share",
       titre: "Vidéo 7",
       vertical: true,
     },
